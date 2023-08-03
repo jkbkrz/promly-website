@@ -4,24 +4,94 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
+    --background-rgb: 0, 0, 0;
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  box-sizing: border-box;
+  position: relative;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  font-size: 16px;
+}
+
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.background-gradient {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  width: clamp(300px, 110vw, 2300px);
+  height: clamp(300px, 84vh, 500px);
+  background: linear-gradient(180deg, rgba(251, 255, 0, 1) 25%, rgba(128, 255, 0, 1) 75%, rgba(255, 0, 0, 0) 90%);
+  border-radius: 0 0 100% 100%;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+@media screen and (max-width: 500px) {
+  .background-gradient {
+    width: clamp(300px, 120vw, 2300px);
+    height: clamp(300px, 74vh, 430px);
+  }
+}
+
+.disable-select {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
