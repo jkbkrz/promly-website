@@ -15,7 +15,7 @@ export default function Search({ value }) {
 
     return <form onSubmit={handleSubmit}>
         <div className="relative max-w-md sm:max-w-xl mx-auto">
-            <input onChange={(e) => setQuery(e.target.value)} value={query} type="search" autoComplete="off" id="default-search" className="block bg-white dark:bg-black pl-5 p-4 text-black dark:text-white border border-gray-300 dark:border-zinc-700 rounded-full w-full focus:outline-none focus:ring" required></input>
+            <input disabled={loading} onChange={(e) => setQuery(e.target.value)} value={query} type="search" autoComplete="off" id="default-search" className="block bg-white dark:bg-black pl-5 p-4 text-black dark:text-white border border-gray-300 dark:border-zinc-700 rounded-full w-full focus:outline-none focus:ring" required></input>
 
             {loading ? (
                 <button role="status" className='absolute right-2 bottom-3 px-4 py-2'>
