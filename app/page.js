@@ -19,7 +19,7 @@ export default function Home() {
         </div>
 
         <ImagesMarquee />
-        <HomeAccordion />
+        {/* <HomeAccordion /> */}
         <div className="h-16" />
       </main>
     </>

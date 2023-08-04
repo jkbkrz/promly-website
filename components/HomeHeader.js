@@ -8,8 +8,8 @@ import { Menu, Transition } from '@headlessui/react'
 export default function HomeHeader() {
 
 
-    return <nav className={`z-10 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-80 backdrop-blur-xl w-full flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }}>
-        <div className="flex flex-row items-center gap-6 justify-start text-gray-500 text-sm font-normal">
+    return <nav className={`z-10 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-95 backdrop-blur-xl w-full flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }}>
+        <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
             <Link href="/" className="flex">
                 {/* <Image src="promly.svg" width={80} height={23} alt="Promly logo" /> */}
                 <svg
@@ -29,7 +29,7 @@ export default function HomeHeader() {
             <div className='hidden md:flex flex-row gap-6 items-center'>
                 <Link href='#'>Promocje</Link>
                 <Link href='#'>Kontakt</Link>
-                <Link href='#'>Więcej</Link>
+                <Link href='#'>Polityka prywantości</Link>
             </div>
 
         </div>

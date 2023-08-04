@@ -1,19 +1,17 @@
 "use server"
 
-import TestCard from "./components/TestCard";
+import ProductTile from "./components/ProductTile";
 
 async function searchProducts({ searchQuery, cursor }) {
-    const res = await fetch(`http://localhost:3030/website/search?searchQuery=${searchQuery}&next=${cursor}`, {
+    const res = await fetch(`${process.env.API_URL}/website/search?searchQuery=${searchQuery}&next=${cursor}`, {
         cache: 'no-cache'
     })
 
     const { results, nextCursor } = await res.json();
 
-    console.log(results, nextCursor)
-
     return {
         nextCursor,
-        products: results.map((product) => <TestCard key={product._id} product={product} />)
+        products: results.map((product) => <ProductTile key={product._id} product={product} fromSearch={true} />)
     }
 }
 

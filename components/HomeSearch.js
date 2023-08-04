@@ -23,7 +23,7 @@ export default function HomeSearch() {
     const [query, setQuery] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.push(`/s/${query}`)
+        router.push(`/s/${query}`, { scroll: true })
     }
 
     return <form onSubmit={handleSubmit}>

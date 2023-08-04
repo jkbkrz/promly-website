@@ -28,12 +28,6 @@ export default function LoadMore({ searchQuery, nextCursor }) {
 
     return <>
         {data.products}
-
-        {data.nextCursor ?
-            <div ref={container}>Loading more</div>
-            :
-            <span>Brak dalszych wyników</span>
-        }
-
+        {data.nextCursor ? <div ref={container}></div> : <></>}
     </>
 }
