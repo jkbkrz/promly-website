@@ -55,7 +55,7 @@ const ProductSizes = ({ sizes }) => {
                                 : 'dark:text-opacity-25 text-opacity-25'
                             }`}
                     >
-                        <span className="text-xs">{item.size}/<span style={{ fontSize: 10 }}>{formatDateToTimeAgo(item.lastUpdatedAt)}</span></span>
+                        <span className="text-xs">{item.size.toUpperCase()}/<span style={{ fontSize: 10 }}>{formatDateToTimeAgo(item.lastUpdatedAt)}</span></span>
                     </li>
                 ))}
             </ul>
