@@ -22,7 +22,8 @@ const ProductTile = ({ product, fromSearch }) => {
 
         {/* Display search score */}
         {/* <span>{product.searchScore}</span>
-        <span>{product.modifiedSearchScore}</span> */}
+        <span>{product.modifiedSearchScore}</span>
+        <span>{product._id}</span> */}
 
         <div className="flex-grow aspect-w-1 aspect-h-1 p-4 w-full bg-neutral-100   lg:aspect-none border-0  border-neutral-800">
             <img
