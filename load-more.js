@@ -5,6 +5,7 @@ import { useIsVisible } from "./hooks/useIsVisible"
 import { searchProducts } from "./actions"
 
 export default function LoadMore({ searchQuery, nextCursor }) {
+    console.log('First next cursor: ', nextCursor)
     const [data, setData] = useState({
         nextCursor: nextCursor, products: []
     })
@@ -15,6 +16,7 @@ export default function LoadMore({ searchQuery, nextCursor }) {
     useEffect(() => {
         if (visible) {
             searchProducts({ searchQuery, cursor: data.nextCursor }).then((res) => {
+                console.log('Next cursor: ', res.nextCursor)
                 setData((data) => ({
                     nextCursor: res.nextCursor,
                     products: [

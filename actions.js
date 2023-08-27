@@ -2,9 +2,10 @@
 
 import ProductTile from "./components/ProductTile";
 
-async function searchProducts({ searchQuery, cursor }) {
-    console.log(`${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}`)
-    const res = await fetch(`${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}`, {
+async function searchProducts({ searchQuery, cursor, category, sortOption }) {
+    console.log(`${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}`)
+
+    const res = await fetch(`${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}`, {
         cache: 'no-cache'
     })
 
