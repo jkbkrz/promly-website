@@ -13,6 +13,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
         updatedSearchParams.set('category', newCategory);
         const updatedQueryString = updatedSearchParams.toString();
         router.push(`${pathname}?${updatedQueryString}`);
+        router.refresh();
     };
 
     const handleSortChange = (e) => {
@@ -21,6 +22,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
         updatedSearchParams.set('sort', newSort);
         const updatedQueryString = updatedSearchParams.toString();
         router.push(`${pathname}?${updatedQueryString}`);
+        router.refresh();
     };
 
     return (

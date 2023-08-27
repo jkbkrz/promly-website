@@ -82,7 +82,7 @@ export default async function Page({ params, searchParams }) {
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
             {products}
             {(products.length > 0 && nextCursor) ? (
-                <LoadMore searchQuery={params.query} nextCursor={nextCursor} />
+                <LoadMore searchQuery={params.query} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} />
             ) : <></>}
         </div>
 
