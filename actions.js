@@ -3,7 +3,7 @@
 import ProductTile from "./components/ProductTile";
 
 async function searchProducts({ searchQuery, cursor, category, sortOption, lastPrice }) {
-    const url = `${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}`
+    const url = `${process.env.API_URL}/search/next/AXWT5BIp8sq4HuZ?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}`
 
     const res = await fetch(url, {
         cache: 'no-store'

@@ -40,7 +40,7 @@ const ProductTile = ({ product, fromSearch }) => {
                 </span>
             </div>
 
-            <h2 className="text-sm text-neutral-400 line-clamp-3">{product.name}</h2>
+            <h2 className="text-sm text-black dark:text-white line-clamp-3">{product.name}</h2>
 
 
             <div className="flex items-center my-2">

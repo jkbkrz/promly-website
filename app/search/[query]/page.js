@@ -37,11 +37,11 @@ const sortOptions = [
     },
     {
         id: "price_asc",
-        label: "Od najtańszego"
+        label: "Cena: od najniższej"
     },
     {
         id: "price_desc",
-        label: "Od najdroższego"
+        label: "Cena: od najwyższej"
     }
 ]
 
