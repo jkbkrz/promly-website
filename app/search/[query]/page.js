@@ -47,7 +47,6 @@ const sortOptions = [
 
 export default async function Page({ params, searchParams }) {
     const { products, nextCursor, lastPrice } = await searchProducts({ searchQuery: params.query, category: searchParams.category || '', sortOption: searchParams.sort })
-
     return <main className="px-3 min-h-screen" >
         <div className="mt-5 mb-8">
             <Search value={params.query} />
