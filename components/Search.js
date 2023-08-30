@@ -10,7 +10,7 @@ export default function Search({ value }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         setLoading(true)
-        router.push(`/s/${query}`)
+        router.push(`/search/${query}`)
     }
 
     return <form onSubmit={handleSubmit}>

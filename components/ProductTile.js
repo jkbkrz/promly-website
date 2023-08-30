@@ -25,7 +25,7 @@ const ProductTile = ({ product, fromSearch }) => {
         <span>{product.modifiedSearchScore}</span>
         <span>{product._id}</span> */}
 
-        <div className="flex-grow aspect-w-1 aspect-h-1 p-4 w-full bg-neutral-100   lg:aspect-none border-0  border-neutral-800">
+        <div className="flex-grow  p-4 w-full bg-neutral-100   lg:aspect-none border-0  border-neutral-800">
             <img
                 src={product.imageBase64}
                 className="h-full w-full object-contain object-center lg:h-full lg:w-full"

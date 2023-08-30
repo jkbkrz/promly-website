@@ -2,20 +2,19 @@
 
 import ProductTile from "./components/ProductTile";
 
-async function searchProducts({ searchQuery, cursor, category, sortOption }) {
-    console.log(`${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}`)
+async function searchProducts({ searchQuery, cursor, category, sortOption, lastPrice }) {
+    const url = `${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}`
 
-    const res = await fetch(`${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}`, {
+    const res = await fetch(url, {
         cache: 'no-store'
     })
 
-
     const { products, nextCursor } = await res.json();
-    console.log("Products count: " + products.length)
 
     return {
         nextCursor,
-        products: products.map((product) => <ProductTile key={product._id} product={product} fromSearch={true} />)
+        products: products.map((product) => <ProductTile key={product._id} product={product} fromSearch={true} />),
+        lastPrice: products.length > 0 ? products[products.length - 1].discountedPrice : null
     }
 }
 

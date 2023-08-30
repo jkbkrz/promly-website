@@ -6,27 +6,27 @@ import LoadMore from "@/load-more"
 const categories = [
     {
         id: "",
-        label: "Wszystko"
+        label: "Pokaż wszystko"
     },
     {
         id: "hoodies",
-        label: "bluzy"
+        label: "Bluzy"
     },
     {
         id: "shoes",
-        label: "buty"
+        label: "Buty"
     },
     {
         id: "tshirts",
-        label: "koszulki"
+        label: "Koszulki"
     },
     {
         id: "pants",
-        label: "spodnie"
+        label: "Spodnie"
     },
     {
         id: "jeans",
-        label: "jeansy"
+        label: "Jeansy"
     }
 ]
 
@@ -37,16 +37,16 @@ const sortOptions = [
     },
     {
         id: "price_asc",
-        label: "Cena: od najnizszej"
+        label: "Od najtańszego"
     },
     {
         id: "price_desc",
-        label: "Cena: od najwyzszej"
+        label: "Od najdroższego"
     }
 ]
 
 export default async function Page({ params, searchParams }) {
-    const { products, nextCursor } = await searchProducts({ searchQuery: params.query, category: searchParams.category || '', sortOption: searchParams.sort })
+    const { products, nextCursor, lastPrice } = await searchProducts({ searchQuery: params.query, category: searchParams.category || '', sortOption: searchParams.sort })
 
     return <main className="px-3 min-h-screen" >
         <div className="mt-5 mb-8">
@@ -54,7 +54,7 @@ export default async function Page({ params, searchParams }) {
         </div>
 
         <div className="mb-8">
-            <SelectNavigation categoryValue={searchParams.category} sortValue={searchParams.sort}>
+            <SelectNavigation categoryValue={searchParams.category || ''} sortValue={searchParams.sort || ''}>
                 {{
                     categories: categories.map((category) => (
                         <option value={category.id} key={category.id} className="text-sm">
@@ -74,21 +74,14 @@ export default async function Page({ params, searchParams }) {
             <span className="text-center block text-neutral-400">Brak wyników dla frazy: {params.query}</span>
         )}
 
-        {/* 
-        {(products.length > 0 && !nextCursor) && (
-            <span className="my-8 text-center block text-neutral-400">Liczba wyników: {products.length}</span>
-        )} */}
-
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
             {products}
-            {(products.length > 0 && nextCursor) ? (
-                <LoadMore searchQuery={params.query} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} />
-            ) : <></>}
+            {(products.length > 0 && nextCursor) && (
+                <LoadMore key={params.query + "_" + searchParams.category + "_" + searchParams.sort} searchQuery={params.query} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} lastPrice={lastPrice} />
+            )}
+
         </div>
 
         <div className="h-16" />
-
-
     </main>
-
 }
