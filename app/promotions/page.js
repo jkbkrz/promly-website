@@ -1,5 +1,4 @@
-import { searchProducts } from "@/actions"
-import Search from "@/components/Search"
+import { getProducts } from "@/actions"
 import SelectNavigation from "@/components/SelectNavigation"
 import LoadMore from "@/load-more"
 
@@ -46,16 +45,13 @@ const sortOptions = [
 ]
 
 export const metadata = {
-    title: 'Promly - Wyszukiwanie'
+    title: 'Promly - Promocje'
 }
 
-export default async function Page({ params, searchParams }) {
-    const { products, nextCursor, lastPrice } = await searchProducts({ searchQuery: params.query, category: searchParams.category || '', sortOption: searchParams.sort })
-    return <main className="px-3 min-h-screen" >
-        <div className="mt-5 mb-8">
-            <Search value={params.query} />
-        </div>
+export default async function Page({ searchParams }) {
+    const { products, nextCursor, lastPrice, lastScore } = await getProducts({ category: searchParams.category || '', sortOption: searchParams.sort })
 
+    return <main className="px-3 min-h-screen">
         <div className="mb-8">
             <SelectNavigation categoryValue={searchParams.category || ''} sortValue={searchParams.sort || ''}>
                 {{
@@ -80,7 +76,7 @@ export default async function Page({ params, searchParams }) {
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
             {products}
             {(products.length > 0 && nextCursor) && (
-                <LoadMore key={params.query + "_" + searchParams.category + "_" + searchParams.sort} searchQuery={params.query} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} lastPrice={lastPrice} isSearch={true} />
+                <LoadMore key={searchParams.category + "_" + searchParams.sort} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} lastPrice={lastPrice} lastScore={lastScore} isSearch={false} />
             )}
 
         </div>

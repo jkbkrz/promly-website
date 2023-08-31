@@ -27,7 +27,7 @@ export default function HomeHeader() {
             </Link>
 
             <div className='hidden md:flex flex-row gap-6 items-center'>
-                <Link href='#'>Promocje</Link>
+                <Link href='/promotions'>Promocje</Link>
                 <Link href='#'>Kontakt</Link>
                 <Link href='#'>Polityka prywantości</Link>
             </div>

@@ -60,7 +60,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
                 <select
                     value={categoryValue}
                     onChange={handleCategoryChange}
-                    className={`${searchParams.get("category") != null ? 'border-blue-500 dark:border-blue-500' : 'border-gray-300 dark:border-zinc-700'} bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-neutral-900  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
+                    className={`${searchParams.get("category") != null ? 'text-blue-500' : 'dark:text-white text-gray-900'} border-gray-300 dark:border-zinc-700 bg-gray-50 border   rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-neutral-900  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500`}
                 >
                     {children.categories}
                 </select>
@@ -71,7 +71,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
                 <select
                     value={sortValue}
                     onChange={handleSortChange}
-                    className={`${searchParams.get("sort") != null ? 'border-blue-500 dark:border-blue-500' : 'border-gray-300 dark:border-zinc-700'} bg-gray-50 border  text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-neutral-900  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
+                    className={`${searchParams.get("sort") != null ? 'text-blue-500' : 'dark:text-white text-gray-900'} border-gray-300 dark:border-zinc-700 bg-gray-50 border   rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-neutral-900  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500`}
                 >
                     {children.sortOptions}
                 </select>

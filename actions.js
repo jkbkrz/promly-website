@@ -18,4 +18,27 @@ async function searchProducts({ searchQuery, cursor, category, sortOption, lastP
     }
 }
 
-export { searchProducts }
+async function getProducts({ cursor, category, sortOption, lastPrice, lastScore }) {
+    console.log("get products " + cursor)
+
+    const url = `${process.env.API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}`
+
+    console.log(url)
+
+    const res = await fetch(url, {
+        cache: 'no-store'
+    })
+
+    const { products, nextCursor } = await res.json();
+
+    console.log(products.length + ' cursor: ' + nextCursor)
+
+    return {
+        nextCursor,
+        products: products.map((product) => <ProductTile key={product._id} product={product} fromSearch={true} />),
+        lastPrice: products.length > 0 ? products[products.length - 1].discountedPrice : null,
+        lastScore: products.length > 0 ? products[products.length - 1].score : null
+    }
+}
+
+export { searchProducts, getProducts }
