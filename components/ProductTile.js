@@ -2,6 +2,8 @@ import Image from "next/image"
 import ProductSizes from "./ProductSizes"
 
 const ProductTile = ({ product, fromSearch }) => {
+    const env = process.env.NODE_ENV
+
     const discount = Math.round((Math.abs(product.price - product.discountedPrice) / product.price) * 100)
     let rating
 
@@ -20,15 +22,13 @@ const ProductTile = ({ product, fromSearch }) => {
             </div>
         )}
 
-        {/* Display search score */}
-        {/* <span>{product.searchScore}</span>
-        <span>{product.modifiedSearchScore}</span> */}
-        {/* <div className="font-mono p-2 text-xs text-neutral-400">
-            <span className="block">score: {product.score} </span>
+        {env && <div className="font-mono p-2 text-xs text-neutral-400">
+            <span className="block">score: {product.score.toFixed(5)} </span>
             <span className="block">_id: {product._id}</span>
-        </div> */}
+            {fromSearch && <span>modifiedSearchScore: {product.modifiedSearchScore.toFixed(5)}</span>}
+        </div>}
 
-        <div className="flex-grow  p-4 w-full bg-neutral-100   lg:aspect-none border-0  border-neutral-800">
+        <div className="flex-grow p-4 w-full bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-96 lg:max-h-96">
             <img
                 src={product.imageBase64}
                 className="h-full w-full object-contain object-center lg:h-full lg:w-full"

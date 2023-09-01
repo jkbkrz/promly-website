@@ -35,7 +35,7 @@ async function getProducts({ cursor, category, sortOption, lastPrice, lastScore 
 
     return {
         nextCursor,
-        products: products.map((product) => <ProductTile key={product._id} product={product} fromSearch={true} />),
+        products: products.map((product) => <ProductTile key={product._id} product={product} fromSearch={false} />),
         lastPrice: products.length > 0 ? products[products.length - 1].discountedPrice : null,
         lastScore: products.length > 0 ? products[products.length - 1].score : null
     }
