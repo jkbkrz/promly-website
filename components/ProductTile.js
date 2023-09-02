@@ -22,11 +22,11 @@ const ProductTile = ({ product, fromSearch }) => {
             </div>
         )}
 
-        {env && <div className="font-mono p-2 text-xs text-neutral-400">
+        {/* {env && <div className="font-mono p-2 text-xs text-neutral-400">
             <span className="block">score: {product.score.toFixed(5)} </span>
             <span className="block">_id: {product._id}</span>
             {fromSearch && <span>modifiedSearchScore: {product.modifiedSearchScore.toFixed(5)}</span>}
-        </div>}
+        </div>} */}
 
         <div className="flex-grow p-4 w-full bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-96 lg:max-h-96">
             <img
