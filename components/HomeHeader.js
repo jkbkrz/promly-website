@@ -35,7 +35,7 @@ export default function HomeHeader() {
                 <div>
                     <Link href='/promotions'>
                         Promocje
-                        {count && <div className='inline-block rounded-full bg-neutral-600 px-1.5 ml-1 text-xs text-white dark:text-black dark:bg-neutral-300'>{count}</div>}
+                        {count && <div className='inline-block rounded-full bg-neutral-600 px-1.5 ml-1 text-xs font-medium text-white dark:text-black dark:bg-neutral-300'>{count}</div>}
                     </Link>
 
                 </div>
