@@ -38,7 +38,7 @@ const ProductTile = ({ product, fromSearch }) => {
             <div >
                 <span className="text-md  line-through text-black dark:text-white mr-2 inline-block">{Math.floor(product.price)} PLN</span>
                 <span className="text-md  text-black dark:text-white mr-2 inline-block">{Math.floor(product.discountedPrice)} PLN</span>
-                <span className="text-xs hidden  text-neutral-400 sm:inline-block">
+                <span className="text-xs hidden  text-neutral-500 sm:inline-block">
                     -{discount}%
                 </span>
             </div>
@@ -51,14 +51,14 @@ const ProductTile = ({ product, fromSearch }) => {
             </div>
 
 
-            <div className="truncate text-neutral-400 flex flex-row justify-between text-center">
+            <div className="truncate text-neutral-500 flex flex-row justify-between text-center">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#a8a29e"
                         stroke="#a8a29e" viewBox="240 240 544 544" width={14} height={14} className="inline-block mr-2">
                         <path d="M421.5 638.7l-36.2-36.2 217.2-217.2 36.2 36.2-217.2 217.2zm126.7-54.3L421.5 711.1 312.8 602.4l126.7-126.7-36.1-36.1-126.7 126.7-36.2 36.2 144.8 144.8 36.1 36.1.1.1 36.2-36.2-.1-.1 126.7-126.7-36.1-36.1zm235.3-162.9l-36.2-36.2-144.8-144.8-36.2 36.2-126.7 126.7 36.1 36.1 126.7-126.7 108.7 108.7-126.7 126.7 36.1 36.1 126.7-126.7.1.1 36.2-36.2z"></path>
                     </svg>
 
-                    <span className="text-xs truncate text-neutral-400  mb-1">{new URL(product.link).hostname}</span>
+                    <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
                 </div>
                 <div className="hidden lg:block">
                     <svg
@@ -70,7 +70,7 @@ const ProductTile = ({ product, fromSearch }) => {
                     >
                         <path d="M22 18h-8v-8h4v4h4v4zm8-16v28H2V2h28zm-4 4H6v20h20V6z"></path>
                     </svg>
-                    <span className="text-xs font-medium text-neutral-400  self-center">
+                    <span className="text-xs font-medium text-neutral-500  self-center">
                         2h
                     </span>
                 </div>

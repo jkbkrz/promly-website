@@ -43,7 +43,7 @@ const ProductSizes = ({ sizes }) => {
 
     return (
         <div className="flex flex-col gap-1">
-            <span className="text-xs text-neutral-400">Aktualność popularnych rozmiarów:</span>
+            <span className="text-xs text-neutral-500">Aktualność popularnych rozmiarów:</span>
             <ul className="flex flex-row flex-wrap gap-1">
                 {mostRecentSizes.map((item, index) => (
                     <li

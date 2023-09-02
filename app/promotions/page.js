@@ -70,7 +70,7 @@ export default async function Page({ searchParams }) {
         </div>
 
         {(products.length == 0 && !nextCursor) && (
-            <span className="text-center block text-neutral-400">Brak wyników</span>
+            <span className="text-center block text-neutral-500">Brak wyników</span>
         )}
 
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
