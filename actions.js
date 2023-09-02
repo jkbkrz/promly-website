@@ -41,4 +41,16 @@ async function getProducts({ cursor, category, sortOption, lastPrice, lastScore 
     }
 }
 
-export { searchProducts, getProducts }
+async function getProductsCount() {
+    const url = `${process.env.API_URL}/mobile/count`
+
+    const res = await fetch(url, { next: { revalidate: 3600 } })
+
+    const { count } = await res.json();
+
+    return {
+        count
+    }
+}
+
+export { searchProducts, getProducts, getProductsCount }

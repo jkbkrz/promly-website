@@ -2,11 +2,16 @@
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import Image from "next/image";
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react'
+import { getProductsCount } from '@/actions';
 
 export default function HomeHeader() {
+    const [count, setCount] = useState(null)
 
+    useEffect(() => {
+        getProductsCount().then((res) => setCount(res.count)).catch((error) => console.log(error))
+    }, [])
 
     return <nav className={`z-10 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-95 backdrop-blur-xl w-full flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }}>
         <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
@@ -27,9 +32,14 @@ export default function HomeHeader() {
             </Link>
 
             <div className='hidden md:flex flex-row gap-6 items-center'>
-                <Link href='/promotions'>Promocje</Link>
-                <Link href='#'>Kontakt</Link>
-                <Link href='#'>Polityka prywantości</Link>
+                <div>
+                    <Link href='/promotions'>
+                        Promocje
+                        {count && <div className='inline-block rounded-full bg-neutral-600 px-1.5 ml-1 text-xs text-white dark:text-black dark:bg-neutral-300'>{count}</div>}
+                    </Link>
+
+                </div>
+                <Link href='/contact'>Kontakt</Link>
             </div>
 
         </div>
@@ -64,44 +74,38 @@ export default function HomeHeader() {
                     <div className="px-1 py-1 ">
                         <Menu.Item>
                             {({ active }) => (
-                                <button
+                                <Link
+                                    href='/promotions'
                                     className={`bg-gray-10 text-black dark:text-white
                                          group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                 >
                                     <span>Promocje</span>
-                                </button>
+                                    {count && <div className='inline-block rounded-full bg-neutral-600 px-1.5 ml-1 text-xs text-white dark:text-black dark:bg-neutral-300'>{count}</div>}
+                                </Link>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
-                                <button
+                                <Link
+                                    href='/contact'
                                     className={`  text-black dark:text-white
                                         group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                 >
                                     <span>Kontakt</span>
-                                </button>
+                                </Link>
                             )}
                         </Menu.Item>
                     </div>
                     <div className="px-1 py-1">
                         <Menu.Item>
                             {({ active }) => (
-                                <button
-                                    className={` text-black dark:text-white
-                                        group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                >
-                                    <span>Regulamin</span>
-                                </button>
-                            )}
-                        </Menu.Item>
-                        <Menu.Item>
-                            {({ active }) => (
-                                <button
+                                <Link
+                                    href='/privacy-policy'
                                     className={`  'text-black dark:text-white'
                                          group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                 >
                                     <span>Polityka Prywatności</span>
-                                </button>
+                                </Link>
                             )}
                         </Menu.Item>
                     </div>
