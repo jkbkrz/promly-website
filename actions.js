@@ -44,7 +44,7 @@ async function getProducts({ cursor, category, sortOption, lastPrice, lastScore 
 async function getProductsCount() {
     const url = `${process.env.API_URL}/mobile/count`
 
-    const res = await fetch(url, { next: { revalidate: 1 } })
+    const res = await fetch(url, { next: { revalidate: 3600 } })
 
     const { count } = await res.json();
 
