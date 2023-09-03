@@ -8,7 +8,7 @@ export default function AllPromotionsButton() {
     const [count, setCount] = useState(null)
 
     useEffect(() => {
-        getProductsCount().then((res) => setCount(res.count)).catch((error) => console.log(error))
+        getProductsCount().then((res) => count == 0 ? setCount(null) : setCount(res.count)).catch((error) => console.log(error))
     }, [])
 
     return <div className="text-center fllex items-center mt-4">
