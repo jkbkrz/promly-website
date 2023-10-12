@@ -45,9 +45,11 @@ export default function HomeHeader() {
         </div>
 
         <div className="hidden md:flex gap-1 gmd:ap-2" >
-            <img src="/as_pl-cropped.svg" className="h-8 md:h-10"
+            <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
+                target='_blank' src="/as_pl-cropped.svg" className="h-8 md:h-10"
             />
-            <img src="/gp_pl-cropped.svg" className="h-8 md:h-10"
+            <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
+                target='_blank' src="/gp_pl-cropped.svg" className="h-8 md:h-10"
             />
         </div>
 
@@ -112,24 +114,28 @@ export default function HomeHeader() {
                     <div className="px-1 py-1 flex flex-row">
                         <Menu.Item>
                             {({ active }) => (
-                                <button
+                                <a
+                                    href='https://play.google.com/store/apps/details?id=pl.promly.promly'
+                                    target='_blank'
                                     className={`  text-white'text-black dark:text-white'
                                          group flex w-full items-center rounded-md px-1 py-1 text-sm`}
                                 >
                                     <img src="/as_pl-cropped.svg" className="h-full"
                                     />
-                                </button>
+                                </a>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
-                                <button
+                                <a
+                                    href='https://play.google.com/store/apps/details?id=pl.promly.promly'
+                                    target='_blank'
                                     className={`text-black dark:text-white
                                          group flex w-full items-center rounded-md px-1 py-1 text-sm`}
                                 >
                                     <img src="/gp_pl-cropped.svg" className="h-full"
                                     />
-                                </button>
+                                </a>
                             )}
                         </Menu.Item>
                     </div>
