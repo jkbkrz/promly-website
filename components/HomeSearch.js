@@ -9,7 +9,7 @@ export default function HomeSearch() {
 
     React.useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ['biała koszulka oversize', 'nike air force 1', 'czarne sneakersy', 'Przeszukaj tysiące promocji'],
+            strings: ['nike t-shirt', 'nike air force 1', 'jeansy', 'Przeszukaj tysiące promocji'],
             typeSpeed: 50,
             attr: 'placeholder',
         });
