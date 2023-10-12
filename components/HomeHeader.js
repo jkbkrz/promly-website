@@ -46,11 +46,16 @@ export default function HomeHeader() {
 
         <div className="hidden md:flex gap-1 gmd:ap-2" >
             <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
-                target='_blank' src="/as_pl-cropped.svg" className="h-8 md:h-10"
-            />
+                target='_blank'
+            >
+                <img src="/as_pl-cropped.svg" className="h-8 md:h-10" />
+            </a>
+
             <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
-                target='_blank' src="/gp_pl-cropped.svg" className="h-8 md:h-10"
-            />
+                target='_blank'
+            >
+                <img src="/gp_pl-cropped.svg" className="h-8 md:h-10" />
+            </a>
         </div>
 
 
