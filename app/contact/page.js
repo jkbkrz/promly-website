@@ -4,6 +4,6 @@ export default function Page() {
             fontSize: "clamp(30px, 7vw, 60px)"
         }}>Informacje kontaktowe</h1>
 
-        <p className="mx-auto text-center text-neutral-500 max-w-5xl">Jeśli masz pytania, sugestie lub potrzebujesz pomocy, jesteśmy dostępni za pośrednictwem e-maila. Z przyjemnością pomożemy Ci w każdy możliwy sposób. Prosimy o kontakt na poniższy adres e-mail: <br /><br /> kontakt@promly.pl</p>
+        <p className="mx-auto text-center text-neutral-500 max-w-5xl">Jeśli masz pytania, sugestie lub potrzebujesz pomocy, jesteśmy dostępni za pośrednictwem e-maila. Z przyjemnością pomożemy Ci w każdy możliwy sposób. Prosimy o kontakt na poniższy adres e-mail: <br /><br /> jakubkrauza@icloud.com</p>
     </main>
 }
