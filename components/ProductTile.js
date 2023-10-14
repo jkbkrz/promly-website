@@ -1,6 +1,20 @@
 import Image from "next/image"
 import ProductSizes from "./ProductSizes"
 
+const calculateTimeSinceUpdate = (date) => {
+    const currentDate = new Date()
+    const updatedAt = new Date(date)
+
+    const timeDifference = currentDate - updatedAt
+    const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+    if (hoursDifference < 24) {
+        return `${Math.floor(hoursDifference)}h`
+    } else {
+        return `${Math.floor(hoursDifference / 24)}d`
+    }
+}
+
 const ProductTile = ({ product, fromSearch }) => {
     const env = process.env.NODE_ENV
 
@@ -12,6 +26,8 @@ const ProductTile = ({ product, fromSearch }) => {
     else if (discount >= 50) rating = 4
     else if (discount >= 40) rating = 3.5
     else rating = 3
+
+
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
     return <a href={product.link} target="_blank" className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-md">
@@ -71,7 +87,7 @@ const ProductTile = ({ product, fromSearch }) => {
                         <path d="M22 18h-8v-8h4v4h4v4zm8-16v28H2V2h28zm-4 4H6v20h20V6z"></path>
                     </svg>
                     <span className="text-xs font-medium text-neutral-500  self-center">
-                        2h
+                        {calculateTimeSinceUpdate(product.updatedAt)}
                     </span>
                 </div>
 
