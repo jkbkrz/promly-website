@@ -5,6 +5,6 @@ export default function Hero() {
         }}>
             Okazje w jednym <br /> miejscu z Promly
         </h1>
-        <span className="text-neutral-500 mt-5 block text-sm sm:text-base">Wyszukiwarka promocji streetwearowych</span>
+        <span className="text-neutral-500 mt-5 block text-sm sm:text-base">Wszystkie promocje w jednym miejscu</span>
     </div>
 }
