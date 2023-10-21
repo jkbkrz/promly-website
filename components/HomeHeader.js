@@ -48,7 +48,7 @@ export default function HomeHeader() {
             <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
                 target='_blank'
             >
-                <img src="/as_pl-cropped.svg" className="h-8 md:h-10" />
+                <img src="/as_pl-cropped.svg" className="h-8 md:h-10 opacity-50" />
             </a>
 
             <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
@@ -125,7 +125,7 @@ export default function HomeHeader() {
                                     className={`  text-white'text-black dark:text-white'
                                          group flex w-full items-center rounded-md px-1 py-1 text-sm`}
                                 >
-                                    <img src="/as_pl-cropped.svg" className="h-full"
+                                    <img src="/as_pl-cropped.svg" className="h-full opacity-50"
                                     />
                                 </a>
                             )}
