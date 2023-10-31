@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 <p align="center">
-  <img src="./public/example.png" alt="Promly" width="738">
+  <img src="./public/readme.png" alt="Promly" width="738">
 </p>
 
 ## Getting Started
