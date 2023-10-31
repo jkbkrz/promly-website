@@ -2,14 +2,11 @@
   <img src="./public/readme.png" alt="Promly" width="738">
 </p>
 
-<center>
+<div align="center">
 Promly's front-end web application for browsing, filtering and searching for promotions.
-</center>
 
-<center>
 [Live demo](https://promly.pl/)
-</center>
-
+</div>
 
 ## Getting Started
 
