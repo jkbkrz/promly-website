@@ -3,30 +3,11 @@
 import { useEffect, useRef, useState } from "react"
 import { useIsVisible } from "./hooks/useIsVisible"
 import { getProducts, searchProducts } from "./actions"
-import { useSearchParams } from "next/navigation"
 
 export default function LoadMore({ searchQuery, nextCursor, category, sortOption, lastPrice, lastScore, isSearch }) {
-    console.log(`Initial load more: \n searchQuery: ${searchQuery} \n nextCursor: ${nextCursor} \n category: ${category} \n sortOption: ${sortOption}`)
-
-
-    console.log('First next cursor: ', nextCursor)
     const [data, setData] = useState({
         nextCursor: nextCursor, products: [], lastPrice, lastScore
     })
-
-    // const searchParams = useSearchParams();
-
-    // useEffect(() => {
-    //     if (category !== data.category) {
-    //         // Category has changed, reset products and maintain the current cursor
-    //         setData({
-    //             nextCursor: nextCursor,
-    //             products: [],
-    //             category: category,
-    //             sortOption: sortOption
-    //         });
-    //     }
-    // }, [category, searchParams]);
 
     const container = useRef(null)
     const visible = useIsVisible(container)
@@ -61,10 +42,12 @@ export default function LoadMore({ searchQuery, nextCursor, category, sortOption
         }
     }, [visible])
 
-    return <>
-        {data.products}
-        {data.nextCursor ? <div ref={container}>
-
-        </div> : <></>}
-    </>
+    return (
+        <>
+            {data.products}
+            {data.nextCursor ? <div ref={container}>
+                {/* Loading indicator... */}
+            </div> : <></>}
+        </>
+    )
 }

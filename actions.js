@@ -9,7 +9,7 @@ async function searchProducts({ searchQuery, cursor, category, sortOption, lastP
         cache: 'no-store'
     })
 
-    const { products, nextCursor } = await res.json();
+    const { products, nextCursor } = await res.json()
 
     return {
         nextCursor,
@@ -23,15 +23,11 @@ async function getProducts({ cursor, category, sortOption, lastPrice, lastScore 
 
     const url = `${process.env.API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}`
 
-    console.log(url)
-
     const res = await fetch(url, {
         cache: 'no-store'
     })
 
-    const { products, nextCursor } = await res.json();
-
-    console.log(products.length + ' cursor: ' + nextCursor)
+    const { products, nextCursor } = await res.json()
 
     return {
         nextCursor,
@@ -46,7 +42,7 @@ async function getProductsCount() {
 
     const res = await fetch(url, { next: { revalidate: 3600 } })
 
-    const { count } = await res.json();
+    const { count } = await res.json()
 
     return {
         count
