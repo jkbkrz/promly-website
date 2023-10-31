@@ -12,7 +12,6 @@ export default function Home() {
         <Hero />
         <HomeSearch />
         <AllPromotionsButton />
-
         <ImagesMarquee />
         {/* <HomeAccordion /> */}
         <div className="h-16" />

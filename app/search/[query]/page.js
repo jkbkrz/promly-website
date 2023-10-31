@@ -51,40 +51,43 @@ export const metadata = {
 
 export default async function Page({ params, searchParams }) {
     const { products, nextCursor, lastPrice } = await searchProducts({ searchQuery: params.query, category: searchParams.category || '', sortOption: searchParams.sort })
-    return <main className="px-3 min-h-screen" >
-        <div className="mt-5 mb-8">
-            <Search value={params.query} />
-        </div>
 
-        <div className="mb-8">
-            <SelectNavigation categoryValue={searchParams.category || ''} sortValue={searchParams.sort || ''}>
-                {{
-                    categories: categories.map((category) => (
-                        <option value={category.id} key={category.id} className="text-sm">
-                            {category.label}
-                        </option>
-                    )),
-                    sortOptions: sortOptions.map((sortOption) => (
-                        <option value={sortOption.id} key={sortOption.id} className="text-sm">
-                            {sortOption.label}
-                        </option>
-                    )),
-                }}
-            </SelectNavigation>
-        </div>
+    return (
+        <main className="px-3 min-h-screen" >
+            <div className="mt-5 mb-8">
+                <Search value={params.query} />
+            </div>
 
-        {(products.length == 0 && !nextCursor) && (
-            <span className="text-center block text-neutral-500">Brak wyników dla frazy: {params.query}</span>
-        )}
+            <div className="mb-8">
+                <SelectNavigation categoryValue={searchParams.category || ''} sortValue={searchParams.sort || ''}>
+                    {{
+                        categories: categories.map((category) => (
+                            <option value={category.id} key={category.id} className="text-sm">
+                                {category.label}
+                            </option>
+                        )),
+                        sortOptions: sortOptions.map((sortOption) => (
+                            <option value={sortOption.id} key={sortOption.id} className="text-sm">
+                                {sortOption.label}
+                            </option>
+                        )),
+                    }}
+                </SelectNavigation>
+            </div>
 
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
-            {products}
-            {(products.length > 0 && nextCursor) && (
-                <LoadMore key={params.query + "_" + searchParams.category + "_" + searchParams.sort} searchQuery={params.query} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} lastPrice={lastPrice} isSearch={true} />
+            {(products.length == 0 && !nextCursor) && (
+                <span className="text-center block text-neutral-500">Brak wyników dla frazy: {params.query}</span>
             )}
 
-        </div>
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
+                {products}
+                {(products.length > 0 && nextCursor) && (
+                    <LoadMore key={params.query + "_" + searchParams.category + "_" + searchParams.sort} searchQuery={params.query} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} lastPrice={lastPrice} isSearch={true} />
+                )}
 
-        <div className="h-16" />
-    </main>
+            </div>
+
+            <div className="h-16" />
+        </main>
+    )
 }

@@ -4,9 +4,9 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react";
 
 const SelectNavigation = ({ children, categoryValue, sortValue }) => {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const router = useRouter();
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+    const router = useRouter()
 
     const [loading, setLoading] = useState(false)
 
@@ -16,38 +16,38 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
 
     const handleCategoryChange = async (e) => {
         setLoading(true)
-        const newCategory = e.target.value;
-        const updatedSearchParams = new URLSearchParams(searchParams);
+        const newCategory = e.target.value
+        const updatedSearchParams = new URLSearchParams(searchParams)
 
         if (newCategory) {
-            updatedSearchParams.set('category', newCategory);
+            updatedSearchParams.set('category', newCategory)
         } else {
-            updatedSearchParams.delete('category');
+            updatedSearchParams.delete('category')
         }
 
-        const updatedQueryString = updatedSearchParams.toString();
+        const updatedQueryString = updatedSearchParams.toString()
 
-        const newUrl = updatedQueryString ? `${pathname}?${updatedQueryString}` : pathname;
+        const newUrl = updatedQueryString ? `${pathname}?${updatedQueryString}` : pathname
 
-        router.push(newUrl);
+        router.push(newUrl)
     }
 
     const handleSortChange = (e) => {
         setLoading(true)
         const newSort = e.target.value;
-        const updatedSearchParams = new URLSearchParams(searchParams);
+        const updatedSearchParams = new URLSearchParams(searchParams)
 
         if (newSort) {
-            updatedSearchParams.set('sort', newSort);
+            updatedSearchParams.set('sort', newSort)
         } else {
-            updatedSearchParams.delete('sort');
+            updatedSearchParams.delete('sort')
         }
 
-        const updatedQueryString = updatedSearchParams.toString();
+        const updatedQueryString = updatedSearchParams.toString()
 
-        const newUrl = updatedQueryString ? `${pathname}?${updatedQueryString}` : pathname;
+        const newUrl = updatedQueryString ? `${pathname}?${updatedQueryString}` : pathname
 
-        router.push(newUrl);
+        router.push(newUrl)
     };
 
 
@@ -56,7 +56,6 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
         <div>
             <div className="inline-block mr-2">
                 <span className="text-xs text-neutral-500">Kategoria:</span>
-                {/* {searchParams.get("category") && <span>cat</span>} */}
                 <select
                     value={categoryValue}
                     onChange={handleCategoryChange}
