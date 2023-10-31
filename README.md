@@ -1,8 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 <p align="center">
   <img src="./public/readme.png" alt="Promly" width="738">
 </p>
+
+<center>
+Promly's front-end web application for browsing, filtering and searching for promotions.
+</center>
+
+<center>
+[Live demo](https://promly.pl/)
+</center>
+
 
 ## Getting Started
 
