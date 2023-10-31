@@ -19,15 +19,12 @@ const ProductTile = ({ product, fromSearch }) => {
     const env = process.env.NODE_ENV
 
     const discount = Math.round((Math.abs(product.price - product.discountedPrice) / product.price) * 100)
-    let rating
 
-    if (discount >= 70) rating = 5
-    else if (discount >= 60) rating = 4.5
-    else if (discount >= 50) rating = 4
-    else if (discount >= 40) rating = 3.5
-    else rating = 3
-
-
+    let rating = discount >= 70 ? 5 :
+        discount >= 60 ? 4.5 :
+            discount >= 50 ? 4 :
+                discount >= 40 ? 3.5 :
+                    3;
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
     return <a href={product.link} target="_blank" className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-md">

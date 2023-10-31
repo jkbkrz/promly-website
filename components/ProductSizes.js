@@ -1,43 +1,43 @@
 const ProductSizes = ({ sizes }) => {
     const sortedSizes = sizes.sort(
         (a, b) => new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt)
-    );
+    )
 
-    const mostRecentSizes = sortedSizes.slice(0, 3);
+    const mostRecentSizes = sortedSizes.slice(0, 3)
 
     const getColorCode = (lastUpdatedAt) => {
-        const twoDays = 2 * 24 * 60 * 60 * 1000; // 2 days in milliseconds
-        const fiveDays = 5 * 24 * 60 * 60 * 1000; // 5 days in milliseconds
-        const now = new Date().getTime();
-        const updatedAt = new Date(lastUpdatedAt).getTime();
-        const timeDifference = now - updatedAt;
+        const twoDays = 2 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
+        const fiveDays = 5 * 24 * 60 * 60 * 1000 // 5 days in milliseconds
+        const now = new Date().getTime()
+        const updatedAt = new Date(lastUpdatedAt).getTime()
+        const timeDifference = now - updatedAt
 
         if (timeDifference < twoDays) {
-            return 'green';
+            return 'green'
         } else if (timeDifference >= twoDays && timeDifference <= fiveDays) {
-            return 'yellow';
+            return 'yellow'
         } else {
-            return 'red';
+            return 'red'
         }
     };
 
     const formatDateToTimeAgo = (dateString) => {
-        const currentDate = new Date();
-        const pastDate = new Date(dateString);
-        const timeDifference = currentDate - pastDate;
-        const secondsDifference = Math.floor(timeDifference / 1000);
+        const currentDate = new Date()
+        const pastDate = new Date(dateString)
+        const timeDifference = currentDate - pastDate
+        const secondsDifference = Math.floor(timeDifference / 1000)
 
         if (secondsDifference < 60) {
-            return `${secondsDifference}s`;
+            return `${secondsDifference}s`
         } else if (secondsDifference < 3600) {
             const minutesDifference = Math.floor(secondsDifference / 60);
-            return `${minutesDifference}m`;
+            return `${minutesDifference}m`
         } else if (secondsDifference < 86400) {
             const hoursDifference = Math.floor(secondsDifference / 3600);
-            return `${hoursDifference}h`;
+            return `${hoursDifference}h`
         } else {
             const daysDifference = Math.floor(secondsDifference / 86400);
-            return `${daysDifference}d`;
+            return `${daysDifference}d`
         }
     }
 
