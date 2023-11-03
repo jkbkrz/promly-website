@@ -27,11 +27,11 @@ const ProductTile = ({ product, fromSearch }) => {
                     3;
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
-    return <a href={product.link} target="_blank" className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-md">
+    return <a href={product.link} target="_blank" className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">
         {product.selected === true && (
-            <div className="px-4 py-3 flex flex-row gap-2 ">
+            <div className="px-4 py-3 flex flex-row gap-2 absolute">
                 <Image src="/selected.svg" width={16} height={16}></Image>
-                <span className="text-xs">Promly selected</span>
+                {/* <span className="text-xs text-black">Promly selected</span> */}
             </div>
         )}
 
@@ -56,7 +56,7 @@ const ProductTile = ({ product, fromSearch }) => {
                 </span>
             </div>
 
-            <h2 className="text-sm text-black dark:text-white line-clamp-3">{product.name}</h2>
+            <h2 className="text-sm text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
 
 
             <div className="flex items-center my-2">
@@ -73,7 +73,7 @@ const ProductTile = ({ product, fromSearch }) => {
 
                     <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
                 </div>
-                <div className="hidden lg:block">
+                {/* <div className="hidden lg:block">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#a8a29e"
@@ -86,7 +86,7 @@ const ProductTile = ({ product, fromSearch }) => {
                     <span className="text-xs font-medium text-neutral-500  self-center">
                         {calculateTimeSinceUpdate(product.updatedAt)}
                     </span>
-                </div>
+                </div> */}
 
             </div>
 
