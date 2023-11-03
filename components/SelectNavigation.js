@@ -1,7 +1,6 @@
 "use client"
-
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 const SelectNavigation = ({ children, categoryValue, sortValue }) => {
     const pathname = usePathname()
@@ -34,7 +33,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
 
     const handleSortChange = (e) => {
         setLoading(true)
-        const newSort = e.target.value;
+        const newSort = e.target.value
         const updatedSearchParams = new URLSearchParams(searchParams)
 
         if (newSort) {
@@ -48,7 +47,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
         const newUrl = updatedQueryString ? `${pathname}?${updatedQueryString}` : pathname
 
         router.push(newUrl)
-    };
+    }
 
 
     console.log(searchParams.get("sort"))
@@ -88,7 +87,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
                 </div>
             </div>}
         </div>
-    );
+    )
 }
 
 export default SelectNavigation

@@ -24,7 +24,7 @@ const ProductTile = ({ product, fromSearch }) => {
         discount >= 60 ? 4.5 :
             discount >= 50 ? 4 :
                 discount >= 40 ? 3.5 :
-                    3;
+                    3
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
     return <a href={product.link} target="_blank" className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">

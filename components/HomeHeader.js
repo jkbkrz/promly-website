@@ -1,7 +1,5 @@
 'use client'
-import { usePathname } from 'next/navigation';
 import Link from "next/link";
-import Image from "next/image";
 import { Fragment, useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { getProductsCount } from '@/actions';

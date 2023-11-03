@@ -1,6 +1,5 @@
 'use client'
-
-import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee"
 import Image from "next/image"
 
 export default function ImagesMarquee() {
@@ -33,7 +32,6 @@ export default function ImagesMarquee() {
 
 const ImageTile = ({ src }) => {
     return <Image
-        alt='Mountains'
         src={src}
         width={256}
         height={256}

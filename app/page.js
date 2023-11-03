@@ -1,8 +1,7 @@
-import AllPromotionsButton from "@/components/AllPromotionsButotn";
 import Hero from "@/components/Hero";
 import HomeAccordion from "@/components/HomeAccordion";
-import HomeSearch from "@/components/HomeSearch";
 import ImagesMarquee from "@/components/ImagesMarquee";
+import Search from "@/components/Search";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,8 +9,7 @@ export default function Home() {
     <>
       <main className="min-h-screen px-3">
         <Hero />
-        <HomeSearch />
-        <AllPromotionsButton />
+        <Search animate={true} />
         <ImagesMarquee />
         {/* <HomeAccordion /> */}
         <div className="h-16" />

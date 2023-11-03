@@ -1,6 +1,5 @@
 "use server"
-
-import ProductTile from "./components/ProductTile";
+import ProductTile from "./components/ProductTile"
 
 async function searchProducts({ searchQuery, cursor, category, sortOption, lastPrice }) {
     const url = `${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}`
@@ -19,8 +18,6 @@ async function searchProducts({ searchQuery, cursor, category, sortOption, lastP
 }
 
 async function getProducts({ cursor, category, sortOption, lastPrice, lastScore }) {
-    console.log("get products " + cursor)
-
     const url = `${process.env.API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}`
 
     const res = await fetch(url, {
@@ -39,9 +36,7 @@ async function getProducts({ cursor, category, sortOption, lastPrice, lastScore 
 
 async function getProductsCount() {
     const url = `${process.env.API_URL}/mobile/count`
-
     const res = await fetch(url, { next: { revalidate: 3600 } })
-
     const { count } = await res.json()
 
     return {

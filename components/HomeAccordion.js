@@ -1,5 +1,5 @@
 'use client'
-import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
+import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion"
 
 const AccordionItem = ({ header, ...rest }) => (
     <Item
@@ -26,7 +26,7 @@ const AccordionItem = ({ header, ...rest }) => (
         }}
         panelProps={{ className: "p-4" }}
     />
-);
+)
 
 export default function HomeAccordion() {
     return (
@@ -69,5 +69,5 @@ export default function HomeAccordion() {
                 </AccordionItem>
             </Accordion>
         </div>
-    );
+    )
 }
