@@ -15,7 +15,7 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
             {tabs.map((tab) => (
                 <button
                     disabled={isLoading}
-                    id={tab.id}
+                    key={tab.id}
                     onClick={() => {
                         if (tab.id === activeTab) return
                         setActiveTab(tab.id)
