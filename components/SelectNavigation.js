@@ -12,6 +12,8 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import AnimatedTabs from "./AnimatedTabs"
+import { categories, sortOptions } from "@/lib/utils"
 
 const SelectNavigation = ({ children, categoryValue, sortValue }) => {
     const pathname = usePathname()
@@ -68,14 +70,18 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
     console.log(searchParams.get("sort"))
     return (
         <div>
-            <div className="inline-block mr-2 mb-2">
+            <div className="flex justify-between flex-col lg:flex-row lg:gap-0 gap-5">
+                <AnimatedTabs motionLayoutId="active-category-pill" tabs={categories} callback={handleCategoryChange} className="inline-block" value={categoryValue} isLoading={loading} />
+                <AnimatedTabs motionLayoutId="active-sort-pill" tabs={sortOptions} callback={handleSortChange} className="inline-block" value={sortValue} isLoading={loading} />
+            </div>
+
+            {/* <div className="inline-block mr-2 mb-2">
                 <Select className="text-7xl bg-red-500" value={categoryValue} onValueChange={handleCategoryChange}>
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Kategorie" />
                     </SelectTrigger>
                     <SelectContent>
                         <SelectGroup>
-                            {/* <SelectLabel>Kategorie</SelectLabel> */}
                             {children.categories}
                         </SelectGroup>
                     </SelectContent>
@@ -89,25 +95,13 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
                     </SelectTrigger>
                     <SelectContent>
                         <SelectGroup>
-                            {/* <SelectLabel>Sortowanie</SelectLabel> */}
                             {children.sortOptions}
                         </SelectGroup>
                     </SelectContent>
                 </Select>
-            </div>
-
-            {/* <div className="inline-block mr-2">
-                <span className="text-xs text-neutral-500">Sortowanie:</span>
-                <select
-                    value={sortValue}
-                    onChange={handleSortChange}
-                    className={`${searchParams.get("sort") != null ? 'text-blue-500' : 'dark:text-white text-gray-900'} border-gray-300 dark:border-zinc-700 bg-gray-50 border   rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-neutral-900  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                >
-                    {children.sortOptions}
-                </select>
             </div> */}
 
-            {loading && <div className="inline-block  h-full">
+            {/* {loading && <div className="inline-block  h-full">
                 <div class="text-center">
                     <div role="status">
                         <svg aria-hidden="true" class="inline w-5 h-5 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +111,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
-            </div>}
+            </div>} */}
         </div>
     )
 }

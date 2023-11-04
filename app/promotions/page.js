@@ -14,7 +14,7 @@ export default async function Page({ searchParams }) {
     return (
         <main className="px-3 min-h-screen">
             <div className="mb-8">
-                <SelectNavigation categoryValue={searchParams.category || ''} sortValue={searchParams.sort || ''}>
+                <SelectNavigation categoryValue={searchParams.category || 'default'} sortValue={searchParams.sort || 'default'}>
                     {{
                         categories: categories.map((category) => (
                             <SelectItem value={category.id} key={category.id}>{category.label}</SelectItem>
