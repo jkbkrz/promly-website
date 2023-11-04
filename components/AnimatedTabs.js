@@ -8,7 +8,7 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
     const [activeTab, setActiveTab] = useState(value)
 
     return (
-        <div className={cn("flex mr-1", className, isLoading ? 'animate-pulse' : '')} {...props}>
+        <div className={cn("flex flex-wrap gap-1", className, isLoading ? 'animate-pulse' : '')} {...props}>
             {headline && (
                 <span className="block text-sm text-neutral-500 px-3 pb-1">{headline}</span>
             )}
@@ -21,7 +21,7 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
                         setActiveTab(tab.id)
                         callback(tab.id)
                     }}
-                    className={`${activeTab === tab.id ? "" : "hover:text-white/50"} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-2 outline-sky-400 focus-visible:outline transition`}
+                    className={`${activeTab === tab.id ? "" : "hover:text-white/50"} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-2 outline-sky-400 focus-visible:outline transition border border-white/20`}
                 >
                     {activeTab === tab.id && (
                         <motion.div
