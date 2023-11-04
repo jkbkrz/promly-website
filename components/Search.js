@@ -10,8 +10,8 @@ export default function Search({ value = '', animate = false }) {
     const [loading, setLoading] = useState(false)
     const el = useRef(null)
 
-    if (animate == true) {
-        useEffect(() => {
+    useEffect(() => {
+        if (animate) {
             const typed = new Typed(el.current, {
                 strings: ['nike t-shirt', 'nike air force 1', 'jeansy', 'Przeszukaj tysiące promocji'],
                 typeSpeed: 50,
@@ -21,8 +21,9 @@ export default function Search({ value = '', animate = false }) {
             return () => {
                 typed.destroy()
             }
-        }, [])
-    }
+        }
+
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()
