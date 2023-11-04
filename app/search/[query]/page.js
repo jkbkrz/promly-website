@@ -1,49 +1,9 @@
 import { searchProducts } from "@/actions"
 import Search from "@/components/Search"
 import SelectNavigation from "@/components/SelectNavigation"
+import { SelectItem } from "@/components/ui/select"
+import { categories, sortOptions } from "@/lib/utils"
 import LoadMore from "@/load-more"
-
-const categories = [
-    {
-        id: "",
-        label: "Pokaż wszystko"
-    },
-    {
-        id: "hoodies",
-        label: "Bluzy"
-    },
-    {
-        id: "shoes",
-        label: "Buty"
-    },
-    {
-        id: "tshirts",
-        label: "Koszulki"
-    },
-    {
-        id: "pants",
-        label: "Spodnie"
-    },
-    {
-        id: "jeans",
-        label: "Jeansy"
-    }
-]
-
-const sortOptions = [
-    {
-        id: "",
-        label: "Polecane"
-    },
-    {
-        id: "price_asc",
-        label: "Cena: od najniższej"
-    },
-    {
-        id: "price_desc",
-        label: "Cena: od najwyższej"
-    }
-]
 
 export const metadata = {
     title: 'Promly - Wyszukiwanie'
@@ -59,17 +19,14 @@ export default async function Page({ params, searchParams }) {
             </div>
 
             <div className="mb-8">
+
                 <SelectNavigation categoryValue={searchParams.category || ''} sortValue={searchParams.sort || ''}>
                     {{
                         categories: categories.map((category) => (
-                            <option value={category.id} key={category.id} className="text-sm">
-                                {category.label}
-                            </option>
+                            <SelectItem value={category.id} key={category.id}>{category.label}</SelectItem>
                         )),
                         sortOptions: sortOptions.map((sortOption) => (
-                            <option value={sortOption.id} key={sortOption.id} className="text-sm">
-                                {sortOption.label}
-                            </option>
+                            <SelectItem value={sortOption.id} key={sortOption.id}>{sortOption.label}</SelectItem>
                         )),
                     }}
                 </SelectNavigation>

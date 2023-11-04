@@ -1,6 +1,17 @@
 "use client"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
+import * as React from "react"
+
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 const SelectNavigation = ({ children, categoryValue, sortValue }) => {
     const pathname = usePathname()
@@ -13,9 +24,11 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
         setLoading(false)
     }, [categoryValue, sortValue])
 
-    const handleCategoryChange = async (e) => {
+    const handleCategoryChange = async (value) => {
         setLoading(true)
-        const newCategory = e.target.value
+        let newCategory = value
+        if (newCategory === 'default') newCategory = null
+
         const updatedSearchParams = new URLSearchParams(searchParams)
 
         if (newCategory) {
@@ -31,9 +44,11 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
         router.push(newUrl)
     }
 
-    const handleSortChange = (e) => {
+    const handleSortChange = (value) => {
         setLoading(true)
-        const newSort = e.target.value
+        let newSort = value;
+        if (newSort === 'default') newSort = null
+
         const updatedSearchParams = new URLSearchParams(searchParams)
 
         if (newSort) {
@@ -53,18 +68,35 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
     console.log(searchParams.get("sort"))
     return (
         <div>
-            <div className="inline-block mr-2">
-                <span className="text-xs text-neutral-500">Kategoria:</span>
-                <select
-                    value={categoryValue}
-                    onChange={handleCategoryChange}
-                    className={`${searchParams.get("category") != null ? 'text-blue-500' : 'dark:text-white text-gray-900'} border-gray-300 dark:border-zinc-700 bg-gray-50 border   rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-neutral-900  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                >
-                    {children.categories}
-                </select>
+            <div className="inline-block mr-2 mb-2">
+                <Select className="text-7xl bg-red-500" value={categoryValue} onValueChange={handleCategoryChange}>
+                    <SelectTrigger className="w-[180px]">
+                        <SelectValue placeholder="Kategorie" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            {/* <SelectLabel>Kategorie</SelectLabel> */}
+                            {children.categories}
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
             </div>
 
-            <div className="inline-block mr-2">
+            <div className="inline-block mr-2 mb-2">
+                <Select value={sortValue} onValueChange={handleSortChange}>
+                    <SelectTrigger className="w-[180px]">
+                        <SelectValue placeholder="Sortowanie" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            {/* <SelectLabel>Sortowanie</SelectLabel> */}
+                            {children.sortOptions}
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
+            </div>
+
+            {/* <div className="inline-block mr-2">
                 <span className="text-xs text-neutral-500">Sortowanie:</span>
                 <select
                     value={sortValue}
@@ -73,7 +105,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
                 >
                     {children.sortOptions}
                 </select>
-            </div>
+            </div> */}
 
             {loading && <div className="inline-block  h-full">
                 <div class="text-center">

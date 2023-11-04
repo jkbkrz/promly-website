@@ -11,7 +11,7 @@ export default function HomeHeader() {
         getProductsCount().then((res) => setCount(res.count)).catch((error) => console.log(error))
     }, [])
 
-    return <nav className={`z-10 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-95 backdrop-blur-xl w-full flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }}>
+    return <nav className={`top-0 z-10 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-95 backdrop-blur-xl w-screen flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }}>
         <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
             <Link href="/" className="flex">
                 {/* <Image src="promly.svg" width={80} height={23} alt="Promly logo" /> */}
