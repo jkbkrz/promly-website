@@ -1,3 +1,5 @@
+import { Badge } from "@/components/ui/badge"
+
 const ProductSizes = ({ sizes }) => {
     const sortedSizes = sizes.sort(
         (a, b) => new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt)
@@ -46,17 +48,18 @@ const ProductSizes = ({ sizes }) => {
             <span className="text-xs text-neutral-500">Aktualność popularnych rozmiarów:</span>
             <ul className="flex flex-row flex-wrap gap-1">
                 {mostRecentSizes.map((item, index) => (
-                    <li
-                        key={index}
-                        className={`relative inline-block rounded-md  px-1.5 font-mono text-black dark:text-white border dark:border-neutral-700 border-black border-opacity-10 ${getColorCode(item.lastUpdatedAt) === 'green'
-                            ? 'text-opacity-100'
-                            : getColorCode(item.lastUpdatedAt) === 'yellow'
-                                ? 'dark:text-opacity-60 text-opacity-60'
-                                : 'dark:text-opacity-25 text-opacity-25'
-                            }`}
-                    >
-                        <span className="text-xs">{item.size.toUpperCase()}/<span style={{ fontSize: 10 }}>{formatDateToTimeAgo(item.lastUpdatedAt)}</span></span>
-                    </li>
+                    <Badge key={index}>{item.size.toUpperCase()}/{formatDateToTimeAgo(item.lastUpdatedAt)}</Badge>
+                    // <li
+                    //     key={index}
+                    //     className={`relative inline-block rounded-md  px-1.5 font-mono text-black dark:text-white border dark:border-neutral-700 border-black border-opacity-10 ${getColorCode(item.lastUpdatedAt) === 'green'
+                    //         ? 'text-opacity-100'
+                    //         : getColorCode(item.lastUpdatedAt) === 'yellow'
+                    //             ? 'dark:text-opacity-60 text-opacity-60'
+                    //             : 'dark:text-opacity-25 text-opacity-25'
+                    //         }`}
+                    // >
+                    //     <span className="text-xs">{item.size.toUpperCase()}/<span style={{ fontSize: 10 }}>{formatDateToTimeAgo(item.lastUpdatedAt)}</span></span>
+                    // </li>
                 ))}
             </ul>
         </div>

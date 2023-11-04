@@ -1,6 +1,7 @@
 import Image from "next/image"
 import ProductSizes from "./ProductSizes"
 import Link from "next/link"
+import { Card } from "@/components/ui/card"
 
 const calculateTimeSinceUpdate = (date) => {
     const currentDate = new Date()
@@ -28,7 +29,7 @@ const ProductTile = ({ product, fromSearch }) => {
                     3
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
-    return <div className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">
+    return <Card className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">
         {product.selected === true && (
             <div className="px-4 py-3 flex flex-row gap-2 absolute">
                 <Image src="/selected.svg" width={16} height={16}></Image>
@@ -92,7 +93,7 @@ const ProductTile = ({ product, fromSearch }) => {
             </div>
 
         </Link>
-    </div>
+    </Card>
 }
 
 export default ProductTile
