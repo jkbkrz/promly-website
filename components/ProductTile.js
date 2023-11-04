@@ -28,7 +28,7 @@ const ProductTile = ({ product, fromSearch }) => {
                     3
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
-    return <Link href={product.link} target="_blank" className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">
+    return <div className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">
         {product.selected === true && (
             <div className="px-4 py-3 flex flex-row gap-2 absolute">
                 <Image src="/selected.svg" width={16} height={16}></Image>
@@ -48,7 +48,7 @@ const ProductTile = ({ product, fromSearch }) => {
                 className="h-full w-full object-contain object-center lg:h-full lg:w-full"
             />
         </div>
-        <div className="flex-shrink-0 p-4 flex justify-between flex-col border-t border-black border-opacity-10 dark:border-zinc-800">
+        <Link href={product.link} target="_blank" className="flex-shrink-0 p-4 flex justify-between flex-col border-t border-black border-opacity-10 dark:border-zinc-800">
             <div >
                 <span className="text-md  line-through text-black dark:text-white mr-2 inline-block">{Math.floor(product.price)} PLN</span>
                 <span className="text-md  text-black dark:text-white mr-2 inline-block">{Math.floor(product.discountedPrice)} PLN</span>
@@ -91,8 +91,8 @@ const ProductTile = ({ product, fromSearch }) => {
 
             </div>
 
-        </div>
-    </Link>
+        </Link>
+    </div>
 }
 
 export default ProductTile
