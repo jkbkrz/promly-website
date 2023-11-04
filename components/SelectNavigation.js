@@ -70,7 +70,7 @@ const SelectNavigation = ({ children, categoryValue, sortValue }) => {
     console.log(searchParams.get("sort"))
     return (
         <div>
-            <div className="flex justify-between flex-col lg:flex-row lg:gap-0 gap-5">
+            <div className="flex justify-between flex-col lg:flex-row lg:gap-0 gap-5 ">
                 <AnimatedTabs motionLayoutId="active-category-pill" tabs={categories} callback={handleCategoryChange} value={categoryValue} isLoading={loading} />
                 <AnimatedTabs motionLayoutId="active-sort-pill" tabs={sortOptions} callback={handleSortChange} value={sortValue} isLoading={loading} />
             </div>

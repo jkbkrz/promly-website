@@ -8,10 +8,11 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
     const [activeTab, setActiveTab] = useState(value)
 
     return (
-        <div className={cn("flex flex-wrap gap-1", className, isLoading ? 'animate-pulse' : '')} {...props}>
-            {headline && (
-                <span className="block text-sm text-neutral-500 px-3 pb-1">{headline}</span>
-            )}
+        <div
+            className={cn("flex flex-wrap gap-1", className, isLoading ? '' : '')}
+            {...props}
+        >
+            {headline && <span className="block text-sm text-neutral-500 px-3 pb-1">{headline}</span>}
             {tabs.map((tab) => (
                 <button
                     disabled={isLoading}
@@ -21,12 +22,12 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
                         setActiveTab(tab.id)
                         callback(tab.id)
                     }}
-                    className={`${activeTab === tab.id ? "" : "hover:text-white/50"} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-2 outline-sky-400 focus-visible:outline transition border border-white/20`}
+                    className={`${activeTab === tab.id ? "" : "hover:text-white/50"} ${isLoading && activeTab === tab.id ? "animate-pulse" : ""} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-2 outline-sky-400 focus-visible:outline transition border border-black/20 dark:border-zinc-200`}
                 >
                     {activeTab === tab.id && (
                         <motion.div
                             layoutId={motionLayoutId}
-                            className="absolute inset-0 bg-white"
+                            className="absolute inset-0 bg-black dark:bg-white"
                             style={{
                                 borderRadius: 9999, // for framer-motion
                             }}
