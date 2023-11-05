@@ -32,8 +32,9 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
                                 borderRadius: 9999, // for framer-motion
                             }}
                             transition={{
-                                type: "tween",
-                                duration: 0.2
+                                ease: "easeInOut",
+                                duration: 0.3,
+                                x: { duration: 1 }
                             }}
                         />
                     )}
