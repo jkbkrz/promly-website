@@ -34,7 +34,6 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
                             transition={{
                                 ease: "easeInOut",
                                 duration: 0.3,
-                                x: { duration: 1 }
                             }}
                         />
                     )}
