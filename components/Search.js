@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import AllPromotionsButton from './AllPromotionsButotn'
 import Typed from 'typed.js'
 
-export default function Search({ value = '', animate = false }) {
+export default function Search({ value = '', animate = false, ...props }) {
     const router = useRouter()
     const [query, setQuery] = useState(decodeURIComponent(value))
     const [loading, setLoading] = useState(false)
@@ -31,7 +31,7 @@ export default function Search({ value = '', animate = false }) {
         router.push(`/search/${query}`)
     }
 
-    return <form onSubmit={handleSubmit}>
+    return <form onSubmit={handleSubmit} {...props}>
         <div className="relative max-w-md sm:max-w-xl mx-auto">
             <input ref={el} disabled={loading} onChange={(e) => setQuery(e.target.value)} value={query} type="search" autoComplete="off" id="default-search" className="block bg-white dark:bg-black pl-5 p-4 text-black dark:text-white border border-gray-300 dark:border-zinc-700 rounded-full w-full focus:outline-none focus:ring" required></input>
 

@@ -2,9 +2,9 @@
 import Marquee from "react-fast-marquee"
 import Image from "next/image"
 
-export default function ImagesMarquee() {
+export default function ImagesMarquee({ props }) {
     return (
-        <div className="my-12 sm:my-16 relative left-1/2" style={{ transform: "translate(-50%, 0)", width: "120vw", maxWidth: "1840px" }}>
+        <div className="my-12 sm:my-16 relative left-1/2" style={{ transform: "translate(-50%, 0)", width: "120vw", maxWidth: "1840px" }} {...props}>
             <Marquee gradient={true} autoFill={true} gradientWidth={30} speed={25}>
                 <ImageTile src='/squares/square1.png' />
                 <ImageTile src='/squares/square2.png' />

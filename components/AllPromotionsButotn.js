@@ -4,14 +4,14 @@ import { getProductsCount } from "@/actions"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-export default function AllPromotionsButton() {
+export default function AllPromotionsButton({ props }) {
     const [count, setCount] = useState(null)
 
     useEffect(() => {
         getProductsCount().then((res) => count == 0 ? setCount(null) : setCount(res.count)).catch((error) => console.log(error))
     }, [])
 
-    return <div className="text-center fllex items-center mt-4">
+    return <div className="text-center fllex items-center mt-4" {...props}>
         <Link className="inline-flex items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium" href="/promotions">
             Przeglądaj wszystkie okazje
             {Boolean(count) && <div className='inline-block rounded-full bg-blue-600 px-1.5 ml-1 text-xs text-white dark:text-black'>{count}</div>}

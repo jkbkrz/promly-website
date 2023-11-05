@@ -17,7 +17,7 @@ const calculateTimeSinceUpdate = (date) => {
     }
 }
 
-const ProductTile = ({ product, fromSearch }) => {
+const ProductTile = ({ product, fromSearch, ...props }) => {
     const env = process.env.NODE_ENV
 
     const discount = Math.round((Math.abs(product.price - product.discountedPrice) / product.price) * 100)
@@ -29,7 +29,7 @@ const ProductTile = ({ product, fromSearch }) => {
                     3
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
-    return <Card className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl">
+    return <Card className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl" {...props}>
         {product.selected === true && (
             <div className="px-4 py-3 flex flex-row gap-2 absolute">
                 <Image src="/selected.svg" width={16} height={16}></Image>

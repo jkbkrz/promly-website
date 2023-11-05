@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 
-const ProductSizes = ({ sizes }) => {
+const ProductSizes = ({ sizes, ...props }) => {
     const sortedSizes = sizes.sort(
         (a, b) => new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt)
     )
@@ -44,7 +44,7 @@ const ProductSizes = ({ sizes }) => {
     }
 
     return (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1" {...props}>
             <span className="text-xs text-neutral-500">Aktualność popularnych rozmiarów:</span>
             <ul className="flex flex-row flex-wrap gap-1">
                 {mostRecentSizes.map((item, index) => (

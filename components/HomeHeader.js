@@ -4,14 +4,14 @@ import { Fragment, useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { getProductsCount } from '@/actions';
 
-export default function HomeHeader() {
+export default function HomeHeader({ props }) {
     const [count, setCount] = useState(null)
 
     useEffect(() => {
         getProductsCount().then((res) => setCount(res.count)).catch((error) => console.log(error))
     }, [])
 
-    return <nav className={`top-0 z-50 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 w-screen flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }}>
+    return <nav className={`top-0 z-50 mx-auto fixed bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 w-screen flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }} {...props}>
         <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
             <Link href="/" className="flex">
                 {/* <Image src="promly.svg" width={80} height={23} alt="Promly logo" /> */}
