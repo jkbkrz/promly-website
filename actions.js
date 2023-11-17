@@ -17,8 +17,8 @@ async function searchProducts({ searchQuery, cursor, category, sortOption, lastP
     }
 }
 
-async function getProducts({ cursor, category, sortOption, lastPrice, lastScore }) {
-    const url = `${process.env.API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}`
+async function getProducts({ cursor, category, sortOption, lastPrice, lastScore, selected }) {
+    const url = `${process.env.API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}&selected=${selected}`
 
     const res = await fetch(url, {
         cache: 'no-store'

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { useIsVisible } from "./hooks/useIsVisible"
 import { getProducts, searchProducts } from "./actions"
 
-export default function LoadMore({ searchQuery, nextCursor, category, sortOption, lastPrice, lastScore, isSearch }) {
+export default function LoadMore({ searchQuery, nextCursor, category, sortOption, lastPrice, lastScore, isSearch, selected }) {
     const [data, setData] = useState({
         nextCursor: nextCursor, products: [], lastPrice, lastScore
     })
@@ -26,7 +26,7 @@ export default function LoadMore({ searchQuery, nextCursor, category, sortOption
                     }))
                 })
             } else {
-                getProducts({ cursor: data.nextCursor, category, sortOption, lastPrice: data.lastPrice, lastScore: data.lastScore }).then((res) => {
+                getProducts({ cursor: data.nextCursor, category, sortOption, lastPrice: data.lastPrice, lastScore: data.lastScore, selected }).then((res) => {
                     setData((data) => ({
                         nextCursor: res.nextCursor,
                         lastPrice: res.lastPrice,
