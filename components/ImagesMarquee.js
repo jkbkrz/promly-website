@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function ImagesMarquee({ props }) {
     return (
         <div className="my-12 sm:my-16 relative left-1/2" style={{ transform: "translate(-50%, 0)", width: "120vw", maxWidth: "1840px" }} {...props}>
-            <Marquee gradient={true} autoFill={true} gradientWidth={30} speed={25}>
+            <Marquee autoFill={true} gradientWidth={30} speed={25}>
                 <ImageTile src='/squares/square1.png' />
                 <ImageTile src='/squares/square2.png' />
                 <ImageTile src='/squares/square3.png' />
@@ -15,7 +15,7 @@ export default function ImagesMarquee({ props }) {
                 <ImageTile src='/squares/square7.png' />
                 <ImageTile src='/squares/square8.png' />
             </Marquee >
-            <Marquee gradient={true} autoFill={true} speed={25} gradientWidth={30} direction="right">
+            <Marquee autoFill={true} speed={25} gradientWidth={30} direction="right">
                 <ImageTile src='/squares/square2_1.png' />
                 <ImageTile src='/squares/square2_2.png' />
                 <ImageTile src='/squares/square2_3.png' />
