@@ -6,7 +6,7 @@ export default function Hero({ props }) {
             }}>
                 Okazje w jednym <br /> miejscu z Promly
             </h1>
-            <span className="text-neutral-500 mt-5 block text-sm sm:text-base">Bądź o krok przed wszystkimi i zacznij oszczędzać</span>
+            <span className="text-neutral-500 mt-5 block text-sm sm:text-base">Przeglądaj tysiące promocji w jednym miejscu i bądz o krok przed wszystkimi</span>
         </div>
     )
 }

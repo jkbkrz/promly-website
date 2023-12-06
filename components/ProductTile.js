@@ -46,7 +46,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
         <div className="flex-grow p-4 w-full bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-96 lg:max-h-96">
             <img
                 src={product.imageBase64}
-                className="h-full w-full object-contain object-center lg:h-full lg:w-full"
+                className="h-full w-full object-contain object-center"
             />
         </div>
         <Link href={product.link} target="_blank" className="flex-shrink-0 p-4 flex justify-between flex-col border-t border-black border-opacity-10 dark:border-zinc-800">
