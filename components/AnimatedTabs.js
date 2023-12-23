@@ -22,8 +22,9 @@ const AnimatedTabs = ({ motionLayoutId, headline, className, tabs, callback, val
                         setActiveTab(tab.id)
                         callback(tab.id)
                     }}
-                    className={`${activeTab === tab.id ? "" : "dark:hover:text-white/50 hover:text-white/60"} ${isLoading && activeTab === tab.id ? "animate-pulse" : ""} relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline transition border text-white border-black/20 dark:border-white/20`}
+                    className={`${activeTab === tab.id ? "" : "dark:hover:text-white/50 hover:text-white/60"} ${isLoading && activeTab === tab.id ? "animate-pulse" : ""} relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline transition`}
                 >
+                    {/* border text-white border-black/20 dark:border-white/20 */}
                     {activeTab === tab.id && (
                         <motion.div
                             layoutId={motionLayoutId}

@@ -12,7 +12,7 @@ export default async function Page({ searchParams }) {
     const { products, nextCursor, lastPrice, lastScore, selected } = await getProducts({ category: searchParams.category || '', sortOption: searchParams.sort, selected: searchParams.selected })
 
     return (
-        <main className="px-3 min-h-screen">
+        <main className="px-3 min-h-screen -mt-12">
             <div className="mb-8">
                 <SelectNavigation categoryValue={searchParams.category || 'default'} sortValue={searchParams.sort || 'default'}>
                     {{

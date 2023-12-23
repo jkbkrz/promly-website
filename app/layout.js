@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <div className='block mb-24' />
+        <div className='block mb-36' />
         <ThemeProvider attribute="class"
           defaultTheme="light"
           enableSystem
