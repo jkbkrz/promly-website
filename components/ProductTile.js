@@ -76,7 +76,23 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                 </div>
 
                 <a href={product.link} target="_blank">
-                    <Button className="my-4 h-12 w-full">Kup teraz</Button>
+                    <Button className="my-4 h-12 w-full bg-emerald-700">
+                        Kup teraz
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="800"
+                            height="800"
+                            viewBox="0 0 512 512"
+                            className="w-4 h-4 ml-1 fill-white"
+                        >
+                            <g className="fill-white" fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                                <g fill="" transform="translate(42.667 85.333)">
+                                    <path d="M0 0h70.362L89.75 85.333h288.64l-41.143 192H89.638L36.288 42.667H0V0zm138.667 384c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32zM288 384c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </Button>
                 </a>
                 <Card>
                     <CardContent>
