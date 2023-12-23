@@ -1,7 +1,7 @@
 import Image from "next/image"
 import ProductSizes from "./ProductSizes"
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 
 import {
     Sheet,
@@ -65,48 +65,50 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
         <Sheet>
 
 
-            <SheetContent>
-                <ScrollArea className="mt-5 w-full h-screen rounded-md border p-4">
+            <SheetContent className="p-4">
 
 
-                    <div className="rounded-xl flex-grow p-4 w-full  bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-60 lg:max-h-60">
-                        <img
-                            src={product.imageBase64}
-                            className="h-full w-full object-contain object-center"
-                        />
-                    </div>
+                <div className="rounded-xl mx-auto p-4 w-full  bg-neutral-100 border-0  border-neutral-800  h-60 max-h-60">
+                    <img
+                        src={product.imageBase64}
+                        className="h-full mx-auto  object-contain object-center"
+                    />
+                </div>
 
-                    <a href={product.link} target="_blank">
-                        <Button className="my-4 w-full">Kup teraz</Button>
-                    </a>
-
-                    <div className="text-start flex-shrink-0 flex justify-between flex-col">
-                        <div >
-                            <span className="text-md  line-through text-black dark:text-white mr-2 inline-block">{Math.floor(product.price)} PLN</span>
-                            <span className="text-md  text-black dark:text-white mr-2 inline-block">{Math.floor(product.discountedPrice)} PLN</span>
-                            <span className="text-xs hidden  text-neutral-500 sm:inline-block">
-                                -{discount}%
-                            </span>
-                        </div>
-
-                        <h2 className="text-md text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
+                <a href={product.link} target="_blank">
+                    <Button className="my-4 h-12 w-full">Kup teraz</Button>
+                </a>
+                <Card>
+                    <CardContent>
 
 
-                        <div className="flex items-center my-2">
-                            <ProductSizes sizes={product.sizes} />
-                        </div>
-
-
-                        <div className="truncate text-neutral-500 flex flex-row justify-between text-center">
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="#a8a29e"
-                                    stroke="#a8a29e" viewBox="240 240 544 544" width={14} height={14} className="inline-block mr-2">
-                                    <path d="M421.5 638.7l-36.2-36.2 217.2-217.2 36.2 36.2-217.2 217.2zm126.7-54.3L421.5 711.1 312.8 602.4l126.7-126.7-36.1-36.1-126.7 126.7-36.2 36.2 144.8 144.8 36.1 36.1.1.1 36.2-36.2-.1-.1 126.7-126.7-36.1-36.1zm235.3-162.9l-36.2-36.2-144.8-144.8-36.2 36.2-126.7 126.7 36.1 36.1 126.7-126.7 108.7 108.7-126.7 126.7 36.1 36.1 126.7-126.7.1.1 36.2-36.2z"></path>
-                                </svg>
-
-                                <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
+                        <div className="mt-3 text-start flex-shrink-0 flex justify-between flex-col">
+                            <div >
+                                <span className="text-md  line-through text-black dark:text-white mr-2 inline-block">{Math.floor(product.price)} PLN</span>
+                                <span className="text-md  text-black dark:text-white mr-2 inline-block">{Math.floor(product.discountedPrice)} PLN</span>
+                                <span className="text-xs hidden  text-neutral-500 sm:inline-block">
+                                    -{discount}%
+                                </span>
                             </div>
-                            {/* <div className="hidden lg:block">
+
+                            <h2 className="text-md text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
+
+
+                            <div className="flex items-center my-2">
+                                <ProductSizes sizes={product.sizes} />
+                            </div>
+
+
+                            <div className="truncate text-neutral-500 flex flex-row justify-between text-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#a8a29e"
+                                        stroke="#a8a29e" viewBox="240 240 544 544" width={14} height={14} className="inline-block mr-2">
+                                        <path d="M421.5 638.7l-36.2-36.2 217.2-217.2 36.2 36.2-217.2 217.2zm126.7-54.3L421.5 711.1 312.8 602.4l126.7-126.7-36.1-36.1-126.7 126.7-36.2 36.2 144.8 144.8 36.1 36.1.1.1 36.2-36.2-.1-.1 126.7-126.7-36.1-36.1zm235.3-162.9l-36.2-36.2-144.8-144.8-36.2 36.2-126.7 126.7 36.1 36.1 126.7-126.7 108.7 108.7-126.7 126.7 36.1 36.1 126.7-126.7.1.1 36.2-36.2z"></path>
+                                    </svg>
+
+                                    <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
+                                </div>
+                                {/* <div className="hidden lg:block">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#a8a29e"
@@ -121,18 +123,19 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                     </span>
                 </div> */}
 
+                            </div>
+
                         </div>
+                    </CardContent>
 
-                    </div>
-
-                    {/* <SheetHeader>
+                </Card>
+                {/* <SheetHeader>
                     <SheetTitle>Are you sure absolutely sure?</SheetTitle>
                     <SheetDescription>
                         This action cannot be undone. This will permanently delete your account
                         and remove your data from our servers.
                     </SheetDescription>
                 </SheetHeader> */}
-                </ScrollArea>
             </SheetContent>
             <SheetTrigger>
 
