@@ -66,10 +66,10 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
 
 
             <SheetContent>
-                <ScrollArea className="mt-5 h-screen w-full rounded-md border p-4">
+                <ScrollArea className="mt-5 w-full h-screen rounded-md border p-4">
 
 
-                    <div className="rounded-xl flex-grow p-4 w-full bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-96 lg:max-h-96">
+                    <div className="rounded-xl flex-grow p-4 w-full  bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-60 lg:max-h-60">
                         <img
                             src={product.imageBase64}
                             className="h-full w-full object-contain object-center"
