@@ -76,7 +76,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                 </div>
 
                 <a href={product.link} target="_blank">
-                    <Button className="my-4 h-12 w-full bg-emerald-700">
+                    <Button className="my-4 h-12 w-full">
                         Kup teraz
 
                         <svg
@@ -113,7 +113,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                             </div>
 
 
-                            <div className="truncate text-neutral-500 flex flex-row justify-between text-center">
+                            <div className="truncate text-neutral-500 flex flex-row gap-3.5 text-center">
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#a8a29e"
                                         stroke="#a8a29e" viewBox="240 240 544 544" width={14} height={14} className="inline-block mr-2">
@@ -121,7 +121,14 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                                     </svg>
 
                                     <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
+
                                 </div>
+                                {product.selected === true && (
+                                    <div className="flex flex-row items-center gap-2">
+                                        <Image src="/selected.svg" width={16} height={16}></Image>
+                                        <span className="text-xs">Promly selected</span>
+                                    </div>
+                                )}
                                 {/* <div className="hidden lg:block">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -181,21 +188,6 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
 
                         <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
                     </div>
-                    {/* <div className="hidden lg:block">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="#a8a29e"
-                        className="inline-block mr-2"
-                        width={14} height={14}
-                        viewBox="0 0 32 32"
-                    >
-                        <path d="M22 18h-8v-8h4v4h4v4zm8-16v28H2V2h28zm-4 4H6v20h20V6z"></path>
-                    </svg>
-                    <span className="text-xs font-medium text-neutral-500  self-center">
-                        {calculateTimeSinceUpdate(product.updatedAt)}
-                    </span>
-                </div> */}
-
                 </div>
 
             </div>
