@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import ShareProduct from "./ShareProduct"
 
 const calculateTimeSinceUpdate = (date) => {
     const currentDate = new Date()
@@ -129,27 +130,16 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                                         <span className="text-xs">Promly selected</span>
                                     </div>
                                 )}
-                                {/* <div className="hidden lg:block">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="#a8a29e"
-                        className="inline-block mr-2"
-                        width={14} height={14}
-                        viewBox="0 0 32 32"
-                    >
-                        <path d="M22 18h-8v-8h4v4h4v4zm8-16v28H2V2h28zm-4 4H6v20h20V6z"></path>
-                    </svg>
-                    <span className="text-xs font-medium text-neutral-500  self-center">
-                        {calculateTimeSinceUpdate(product.updatedAt)}
-                    </span>
-                </div> */}
-
                             </div>
 
                         </div>
+
+
                     </CardContent>
 
                 </Card>
+                <ShareProduct className="my-4" placeholder={`https://promly.pl/p/${product._id}`} />
+
                 {/* <SheetHeader>
                     <SheetTitle>Are you sure absolutely sure?</SheetTitle>
                     <SheetDescription>
