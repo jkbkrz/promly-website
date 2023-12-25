@@ -47,7 +47,7 @@ async function getProductsCount() {
 async function getProduct(id) {
     const url = `${process.env.API_URL}/mobile/product/${id}`
     const res = await fetch(url, {
-        cache: 'no-store'
+        next: { revalidate: 60 }
     })
     const { product } = await res.json()
     console.log(product)
