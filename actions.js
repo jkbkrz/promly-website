@@ -44,4 +44,16 @@ async function getProductsCount() {
     }
 }
 
-export { searchProducts, getProducts, getProductsCount }
+async function getProduct(id) {
+    const url = `${process.env.API_URL}/mobile/product/${id}`
+    const res = await fetch(url, {
+        cache: 'no-store'
+    })
+    const { product } = await res.json()
+    console.log(product)
+    return {
+        product
+    }
+}
+
+export { searchProducts, getProducts, getProductsCount, getProduct }
