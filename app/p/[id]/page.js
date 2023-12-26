@@ -4,11 +4,17 @@ import ProductPage from "@/components/ProductPage"
 export async function generateMetadata({ params }) {
     const id = params.id
 
-    const data = await getProduct(id)
-    const product = data.product
+    try {
+        const data = await getProduct(id)
+        const product = data.product
 
-    return {
-        title: 'Promly - ' + product.name,
+        return {
+            title: product.name + ' - Promly',
+        }
+    } catch (error) {
+        return {
+            title: 'Promly'
+        }
     }
 }
 
