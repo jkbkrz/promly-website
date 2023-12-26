@@ -35,8 +35,6 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
 
     const discount = Math.round((Math.abs(product.price - product.discountedPrice) / product.price) * 100)
 
-    product.discount = discount;
-
     let rating = discount >= 70 ? 5 :
         discount >= 60 ? 4.5 :
             discount >= 50 ? 4 :
@@ -80,7 +78,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                         <span className="text-md  line-through text-black dark:text-white mr-2 inline-block">{Math.floor(product.price)} PLN</span>
                         <span className="text-md  text-black dark:text-white mr-2 inline-block">{Math.floor(product.discountedPrice)} PLN</span>
                         <span className="text-xs hidden  text-neutral-500 sm:inline-block">
-                            -{product.discount}%
+                            -{discount}%
                         </span>
                     </div>
 

@@ -5,10 +5,9 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 
 export default function ProductPage({ product }) {
+    const discount = Math.round((Math.abs(product.price - product.discountedPrice) / product.price) * 100)
     return (
         <div>
-
-
             <div className="rounded-xl mx-auto p-4 w-full  bg-neutral-100 border-0  border-neutral-800  h-96 max-h-96">
                 <img
                     src={product.imageBase64}
@@ -42,7 +41,7 @@ export default function ProductPage({ product }) {
                             <span className="text-md  line-through text-black dark:text-white mr-2 inline-block">{Math.floor(product.price)} PLN</span>
                             <span className="text-md  text-black dark:text-white mr-2 inline-block">{Math.floor(product.discountedPrice)} PLN</span>
                             <span className="text-xs hidden  text-neutral-500 sm:inline-block">
-                                -{product.discount}%
+                                -{discount}%
                             </span>
                         </div>
 
