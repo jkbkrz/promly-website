@@ -1,5 +1,5 @@
 import HomeHeader from '@/components/HomeHeader'
-import './globals.css'
+import '../globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/theme-provider'

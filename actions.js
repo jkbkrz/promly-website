@@ -56,4 +56,26 @@ async function getProduct(id) {
     }
 }
 
-export { searchProducts, getProducts, getProductsCount, getProduct }
+async function generateTrackingLink(id, targetUrl) {
+    const url = `${process.env.API_URL}/affiliate/generate-tracking-link`
+
+    const body = {
+        destinationUrl: targetUrl,
+        shorten: true,
+    }
+
+    const res = await fetch(url, {
+        method: "POST",
+        cache: 'no-store',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body)
+    })
+
+    const data = await res.json()
+
+    return data.url
+}
+
+export { searchProducts, getProducts, getProductsCount, getProduct, generateTrackingLink }

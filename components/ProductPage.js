@@ -15,7 +15,7 @@ export default function ProductPage({ product }) {
                 />
             </div>
 
-            <a href={product.link} target="_blank">
+            <a href={`/r/${product._id}?targetUrl=${product.link}`} target="_blank">
                 <Button className="my-4 h-12 w-full">
                     Kup teraz
 
