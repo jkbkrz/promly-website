@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef, useState } from "react"
 import { useIsVisible } from "./hooks/useIsVisible"
-import { getProducts, searchProducts } from "./server-actions"
+import { getProducts, searchProducts } from "./actions"
 
 export default function LoadMore({ searchQuery, nextCursor, category, sortOption, lastPrice, lastScore, isSearch, selected }) {
     const [data, setData] = useState({
