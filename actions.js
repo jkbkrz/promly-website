@@ -1,7 +1,7 @@
 import ProductTile from "./components/ProductTile"
 
 async function searchProducts({ searchQuery, cursor, category, sortOption, lastPrice }) {
-    const url = `${process.env.API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}`
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/search?searchQuery=${searchQuery}&next=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}`
 
     const res = await fetch(url, {
         cache: 'no-store'
@@ -17,7 +17,7 @@ async function searchProducts({ searchQuery, cursor, category, sortOption, lastP
 }
 
 async function getProducts({ cursor, category, sortOption, lastPrice, lastScore, selected }) {
-    const url = `${process.env.API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}&selected=${selected}`
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/mobile/products?cursor=${cursor}&filterOptions=${category}&sortOption=${sortOption}&lastPrice=${lastPrice}&lastScore=${lastScore}&selected=${selected}`
 
     const res = await fetch(url, {
         cache: 'no-store'
