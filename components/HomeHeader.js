@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Fragment, useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react'
-import { getProductsCount } from '@/actions';
+import { getProductsCount } from '@/server-actions';
 
 export default function HomeHeader({ props }) {
     const [count, setCount] = useState(null)

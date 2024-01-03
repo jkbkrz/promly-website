@@ -1,4 +1,4 @@
-import { getProduct } from "@/actions"
+import { getProduct } from "@/server-actions"
 import ProductPage from "@/components/ProductPage"
 
 export async function generateMetadata({ params }) {

@@ -1,6 +1,6 @@
 "use client"
 
-import { generateTrackingLink } from "@/actions";
+import { generateTrackingLink } from "@/server-actions";
 import { useEffect } from "react";
 
 

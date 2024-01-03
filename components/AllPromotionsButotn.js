@@ -1,6 +1,6 @@
 'use client'
 
-import { getProductsCount } from "@/actions"
+import { getProductsCount } from "@/server-actions"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 

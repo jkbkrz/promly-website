@@ -1,3 +1,4 @@
+"use server"
 import ProductTile from "./components/ProductTile"
 
 async function searchProducts({ searchQuery, cursor, category, sortOption, lastPrice }) {
@@ -33,4 +34,48 @@ async function getProducts({ cursor, category, sortOption, lastPrice, lastScore,
     }
 }
 
-export { searchProducts, getProducts }
+async function getProductsCount() {
+    const url = `${process.env.API_URL}/mobile/count`
+    const res = await fetch(url, { next: { revalidate: 3600 } })
+    const { count } = await res.json()
+
+    return {
+        count
+    }
+}
+
+async function getProduct(id) {
+    const url = `${process.env.API_URL}/mobile/product/${id}`
+    const res = await fetch(url, {
+        next: { revalidate: 60 }
+    })
+    const { product } = await res.json()
+    console.log(product)
+    return {
+        product
+    }
+}
+
+async function generateTrackingLink(id, targetUrl) {
+    const url = `${process.env.API_URL}/affiliate/generate-tracking-link`
+
+    const body = {
+        destinationUrl: targetUrl,
+        shorten: true,
+    }
+
+    const res = await fetch(url, {
+        method: "POST",
+        cache: 'no-store',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body)
+    })
+
+    const data = await res.json()
+
+    return data.url
+}
+
+export { searchProducts, getProducts, getProductsCount, getProduct, generateTrackingLink }
