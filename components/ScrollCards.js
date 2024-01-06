@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react"
 import ScrollCard from "./ScrollCard"
 import Lenis from '@studio-freight/lenis'
 import AllPromotionsButton from "./AllPromotionsButotn"
+import Link from "next/link"
 
 const cards = [
     {
@@ -54,7 +55,7 @@ const cards = [
 
 
                 </div>
-                <span className="text-xs text-neutral-500 block max-w-xl my-3">Aplikacja na App Store będzie dostępna w niedalekiej przyszłości. Promocje są dostępne również na stronie internetowej: <div className="-mt-2"><AllPromotionsButton /></div></span>
+                <span className="text-xs text-neutral-500 block max-w-xl my-3">Aplikacja na App Store będzie dostępna w niedalekiej przyszłości. Promocje są dostępne również <Link href={"/promotions"} className="text-blue-500 font-bold underline">na tej stronie</Link></span>
             </>
         )
     }
