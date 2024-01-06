@@ -93,8 +93,8 @@ const NavAnimations = {
 
 const StaticNavbar = ({ count }) => {
     return (
-        <nav className={`z-50 mx-auto bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 flex items-center justify-between py-3.5 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }} >
-            <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
+        <nav className={`z-50 rounded-full bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 flex items-center justify-between py-3 px-8 m-2`} style={{ maxWidth: 1920 }} >
+            <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-md font-normal">
                 <div className="flex items-center gap-1">
                     <Link href="/" className="inline-block">
                         {/* <Image src="promly.svg" width={80} height={23} alt="Promly logo" /> */}
@@ -128,7 +128,10 @@ const StaticNavbar = ({ count }) => {
             </div>
 
             <div className="hidden md:flex gap-1 gmd:ap-2" >
-                <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
+                <div className="px-4 py-2 ml-2 text-white bg-black rounded-full text-md ">
+                    <Link href={"https://onelink.to/svwgar"}>Pobierz na Androida</Link>
+                </div>
+                {/* <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
                     target='_blank'
                 >
                     <img src="/as_pl-cropped.svg" className="h-8 md:h-10 opacity-50" />
@@ -138,7 +141,7 @@ const StaticNavbar = ({ count }) => {
                     target='_blank'
                 >
                     <img src="/gp_pl-cropped.svg" className="h-8 md:h-10" />
-                </a>
+                </a> */}
             </div>
 
 
