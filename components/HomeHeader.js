@@ -13,7 +13,7 @@ export default function HomeHeader({ props }) {
 
     // return <nav className={`top-0 z-50  mx-auto fixed left-1/2 -translate-x-1/2 bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 w-screen flex items-center justify-between py-4 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }} {...props}></nav>
 
-    return <nav className={`z-50 mx-auto bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 w-screen flex items-center justify-between py-3.5 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }} {...props}>
+    return <nav className={`z-50 mx-auto bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 flex items-center justify-between py-3.5 px-8  border-b border-b-black border-opacity-10 dark:border-b-zinc-800`} style={{ maxWidth: 1920 }} {...props}>
         <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
             <div className="flex items-center gap-1">
                 <Link href="/" className="inline-block">

@@ -10,33 +10,33 @@ const cards = [
     {
         // title: "Dress Well, Pay Less",
         title: <span>Gdzie styl spotyka oszczędności</span>,
-        color: "text-orange-500",
+        color: "bg-orange-100",
         imageSource: "/euro-dynamic-color.png",
         content: <span className="text-neutral-500 block max-w-xl">Z Promly znajdziesz znajdziesz tanie, ale jakościowe produkty. Skupiamy się głównie na znanych markach</span>
     },
     {
         title: <span>Bądź tuż przed wszystkimi</span>,
-        color: "text-red-500",
+        color: "bg-red-100",
         imageSource: "/explorer-dynamic-colorx.png",
         content: <span className="text-neutral-500 block max-w-xl">Promly skanuje internet na bieżąco, dlatego wszystkie promocje zazwyczaj są nowe</span>
     },
     {
         title: <span>Wyselekcjonowane produkty</span>,
-        color: "text-blue-500",
+        color: "bg-blue-100",
         imageSource: "/zoom-dynamic-color.png",
         content: <span className="text-neutral-500 block max-w-xl">W troscę o jakość, produkty są sortowane przez różne czynniki m.in cene. Produkty z oznaką Promly Selected zostały wybrane ręcznie</span>
 
     },
     {
         title: <span>Nie przegapisz żadnej promocji</span>,
-        color: "text-orange-500",
+        color: "bg-amber-100",
         imageSource: "/megaphone-dynamic-color.png",
         content: <span className="text-neutral-500 block max-w-xl">Pobierając aplikację mobilną zostaniesz poinformowany o ciekawych nowościach</span>
 
     },
     {
         title: <span>Pobierz aplikację już dziś</span>,
-        color: "text-red-500",
+        color: "bg-neutral-100",
         imageSource: "/trophy-dynamic-color.png",
         content: (
             <>
