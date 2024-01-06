@@ -98,3 +98,21 @@ select {
   -webkit-appearance: none;
   appearance: none;
 }
+
+.card-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.card {
+  position: relative;
+
+  /* background-color: black; */
+  width: 1000px;
+  height: 500px;
+
+}
