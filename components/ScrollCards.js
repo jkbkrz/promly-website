@@ -56,7 +56,7 @@ export default function ScrollCards() {
         <div ref={container}>
             {cards.map((card, index) => {
                 const targetScale = 1 - ((cards.length - index) * 0.05)
-                return <ScrollCard {...card} i={index} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale} />
+                return <ScrollCard key={card.title + index} {...card} i={index} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale} />
 
             }
             )}
