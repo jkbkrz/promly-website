@@ -6,7 +6,10 @@ export default function Hero({ props }) {
             }}>
                 Okazje w jednym <br /> miejscu z Promly
             </h1>
-            <span className="text-neutral-500 mt-5 block text-sm sm:text-base text-jus">Bądź na bieżąco i przeglądaj wszystkie najnowsze promocje w jednym miejscu</span>
+
+            <span className="sm:hidden text-neutral-500 mt-5 px-3 block text-sm sm:text-base max-w-2xl mx-auto">Zbieramy wszystkie <span className=" text-blue-600 font-semibold">najkorzystniejsze promocje</span> odzieżowe ze sklepów w jednym miejscu - tutaj. 💙</span>
+
+            <span className="hidden sm:block text-neutral-500 mt-5 px-3 text-sm sm:text-base max-w-2xl mx-auto">Promly to aplikacja, która zbiera wszystkie <span className=" text-blue-600 font-semibold">najkorzystniejsze promocje</span> odzieżowe ze sklepów w jednym miejscu - tutaj. 💙</span>
         </div>
     )
 }
