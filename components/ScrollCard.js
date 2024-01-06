@@ -22,7 +22,7 @@ export default function ScrollCard({ title, i, progress, range, targetScale, col
     const scale = useTransform(progress, range, [1, targetScale])
     return (
         <div ref={container} key="index" className="card-container ">
-            <motion.div style={{ top: `calc(-10% + ${i * 25}px)`, marginTop: "60px", scale }} className={cn(`bg-${color}`, "overflow-hidden border-neutral-300 border bg-white card rounded-3xl flex flex-col p-10 items-center justify-center shadow-2xl shadow-neutral-100")}>
+            <motion.div style={{ marginTop: "60px", }} className={cn(`bg-${color}`, "overflow-hidden border-neutral-300 border bg-white card rounded-3xl flex flex-col p-10 items-center justify-center shadow-2xl shadow-neutral-100")}>
 
                 <div className="flex flex-col gap-4 justify-center items-center relative">
                     <motion.div className={cn(`bgs-${color}`, "border-2 border-neutral-200  rounded-full relative sm:w-64 sm:h-64 w-36 h-36")} style={{ top: imagePosition }}>

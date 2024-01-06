@@ -100,11 +100,11 @@ select {
 }
 
 .card-container {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
 }
 
