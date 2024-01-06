@@ -113,6 +113,6 @@ select {
 
   /* background-color: black; */
   width: 1000px;
-  height: 500px;
+  min-height: 500px;
 
 }
