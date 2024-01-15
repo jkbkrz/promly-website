@@ -32,7 +32,7 @@ export default function HomeHeader({ props }) {
 
     return (
         <>
-            <StaticNavbar />
+            <StaticNavbar count={count} />
             <AnimatePresence>
                 {isScrolling && (
                     <StickyNavbar isScrolling={isScrolling} />
@@ -93,8 +93,8 @@ const NavAnimations = {
 
 const StaticNavbar = ({ count }) => {
     return (
-        <nav className={`z-50 rounded-full bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-90 backdrop-blur-xl backdrop-saturate-150 flex items-center justify-between py-3 px-8 m-2`} style={{ maxWidth: 1920 }} >
-            <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-md font-normal">
+        <nav className={`z-50 bg-white flex items-center justify-between py-3 px-7`} style={{ maxWidth: 1920 }} >
+            <div className="flex flex-row items-center gap-6 justify-start text-neutral-500 text-sm font-normal">
                 <div className="flex items-center gap-1">
                     <Link href="/" className="inline-block">
                         {/* <Image src="promly.svg" width={80} height={23} alt="Promly logo" /> */}
@@ -111,7 +111,7 @@ const StaticNavbar = ({ count }) => {
                             ></path>
                         </svg>
                     </Link>
-                    <div className='inline-block rounded-full bg-black px-1.5 ml-1 text-xs font-medium text-white dark:text-black dark:bg-neutral-300'>Beta</div>
+                    <div className='mr-2 inline-block rounded-full bg-black px-1.5 ml-1 text-xs font-medium text-white dark:text-black dark:bg-neutral-300'>Beta</div>
                 </div>
 
                 <div className='hidden md:flex flex-row gap-6 items-center'>
@@ -128,7 +128,7 @@ const StaticNavbar = ({ count }) => {
             </div>
 
             <div className="hidden md:flex gap-1 gmd:ap-2" >
-                <div className="px-4 py-2 ml-2 text-white bg-black rounded-full text-md ">
+                <div className="px-4 py-2 ml-2 text-white bg-neutral-800 rounded-full text-md ">
                     <Link href={"https://onelink.to/svwgar"}>Pobierz na Androida</Link>
                 </div>
                 {/* <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'

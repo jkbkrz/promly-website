@@ -10,22 +10,22 @@ import Link from "next/link"
 const cards = [
     {
         // title: "Dress Well, Pay Less",
-        title: <span>Gdzie styl spotyka oszczędności</span>,
-        color: "bg-orange-100",
-        imageSource: "/euro-dynamic-color.png",
-        content: <span className="text-neutral-500 block max-w-xl">Z Promly znajdziesz znajdziesz tanie, ale jakościowe produkty. Skupiamy się głównie na znanych markach</span>
+        title: <span className="leading-normal">Gdzie <span className="shadow-red-500 drop-shadow-xl">styl</span> spotyka <span className="text-red-500 px-4 rounded-full bg-red-100">oszczędności</span></span>,
+        color: "bg-red-100",
+        imageSource: "/discount.png",
+        content: <span className="text-neutral-500 block max-w-xl">Z Promly uzyskujesz natychmiastowy dostęp do wszystkich najnowszych promocji z całej sieci</span>
     },
     {
-        title: <span>Bądź tuż przed wszystkimi</span>,
-        color: "bg-red-100",
+        title: <span>Bądź przed wszystkimi</span>,
+        color: "bg-orange-100",
         imageSource: "/explorer-dynamic-colorx.png",
-        content: <span className="text-neutral-500 block max-w-xl">Promly skanuje internet na bieżąco, dlatego wszystkie promocje zazwyczaj są nowe</span>
+        content: <span className="text-neutral-500 block max-w-xl">Promly skanuje sklepy internetowe na bieżąco, więc nie ominą Cie żadne promocje</span>
     },
     {
         title: <span>Wyselekcjonowane produkty</span>,
         color: "bg-blue-100",
         imageSource: "/zoom-dynamic-color.png",
-        content: <span className="text-neutral-500 block max-w-xl">W troscę o jakość, produkty są sortowane przez różne czynniki m.in cene. Produkty z oznaką Promly Selected zostały wybrane ręcznie</span>
+        content: <span className="text-neutral-500 block max-w-xl">Promly nie tylko gromadzi najnowsze okazje, ale także dba o to, aby prezentowane promocje były najwyższej jakości</span>
 
     },
     {

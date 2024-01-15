@@ -30,7 +30,7 @@ export default function ScrollCard({ title, i, progress, range, targetScale, col
                         <Image fill className={cn("relative  p-6 z-10")} src={imageSource} />
 
                     </motion.div>
-                    <motion.h1 style={{ scale: textScale, opacity: textOpacity }} className="text-center disable-select font-heading font-bold tracking-tighter text-black leading-none text-4xl sm:text-5xl" >
+                    <motion.h1 style={{ scale: textScale, opacity: textOpacity }} className="text-center disable-select font-heading font-bold tracking-tighter text-black leading-none text-3xl sm:text-5xl" >
                         {title}
                     </motion.h1>
                     <motion.span style={{ opacity: subTextOpacity }} className={cn("mt-2 text-center")}>
