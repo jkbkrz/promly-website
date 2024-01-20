@@ -82,7 +82,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                         </span>
                     </div>
 
-                    <h2 className="text-start text-sm text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
+                    <h2 className="text-start text-base text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
                 </SheetTrigger>
 
 

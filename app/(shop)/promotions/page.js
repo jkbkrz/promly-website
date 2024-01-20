@@ -30,7 +30,7 @@ export default async function Page({ searchParams }) {
                 <span className="text-center block text-neutral-500">Brak wyników</span>
             )}
 
-            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 xl:grid-cols-3">
                 {products}
                 {(products.length > 0 && nextCursor) && (
                     <LoadMore key={searchParams.category + "_" + searchParams.sort} nextCursor={nextCursor} category={searchParams.category} sortOption={searchParams.sort} lastPrice={lastPrice} lastScore={lastScore} isSearch={false} selected={searchParams.selected} />

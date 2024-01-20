@@ -78,4 +78,13 @@ async function generateTrackingLink(id, targetUrl) {
     return data.url
 }
 
-export { searchProducts, getProducts, getProductsCount, getProduct, generateTrackingLink }
+async function getAllProducts() {
+    const url = `${process.env.API_URL}/mobile/all-products`
+    const res = await fetch(url, {
+        cache: 'no-store'
+    })
+    const { allProducts } = await res.json()
+    return allProducts
+}
+
+export { searchProducts, getProducts, getProductsCount, getProduct, generateTrackingLink, getAllProducts }
