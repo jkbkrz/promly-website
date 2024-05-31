@@ -83,7 +83,7 @@ export const SearchBlocks = ({ className, initialData = defaultInitialData, ...p
                     </SelectTrigger>
                     <SelectContent>
                         {categoryData.sizes.map((size) =>
-                            <SelectItem value={size.value}>{size.label}</SelectItem>
+                            <SelectItem value={size.value} key>{size.label}</SelectItem>
                         )}
                     </SelectContent>
                 </Select>
@@ -94,8 +94,8 @@ export const SearchBlocks = ({ className, initialData = defaultInitialData, ...p
                         <SelectValue placeholder="Kolor" />
                     </SelectTrigger>
                     <SelectContent>
-                        {categoryData.colors.map((color) =>
-                            <SelectItem value={color.value}>{color.label}</SelectItem>
+                        {categoryData.colors.map((color, index) =>
+                            <SelectItem value={color.value} key={index}>{color.label}</SelectItem>
                         )}
                     </SelectContent>
                 </Select>
@@ -106,8 +106,8 @@ export const SearchBlocks = ({ className, initialData = defaultInitialData, ...p
                         <SelectValue placeholder="Fason" />
                     </SelectTrigger>
                     <SelectContent>
-                        {categoryData.fits.map((fit) =>
-                            <SelectItem value={fit.value}>{fit.label}</SelectItem>
+                        {categoryData.fits.map((fit, index) =>
+                            <SelectItem value={fit.value} key={index}>{fit.label}</SelectItem>
                         )}
                     </SelectContent>
                 </Select>
@@ -118,8 +118,8 @@ export const SearchBlocks = ({ className, initialData = defaultInitialData, ...p
                         <SelectValue placeholder="Styl" />
                     </SelectTrigger>
                     <SelectContent>
-                        {categoryData.styles.map((style) =>
-                            <SelectItem value={style.value}>{style.label}</SelectItem>
+                        {categoryData.styles.map((style, index) =>
+                            <SelectItem value={style.value} key={index}>{style.label}</SelectItem>
                         )}
                     </SelectContent>
                 </Select>
@@ -130,8 +130,8 @@ export const SearchBlocks = ({ className, initialData = defaultInitialData, ...p
                         <SelectValue placeholder="Sklep" />
                     </SelectTrigger>
                     <SelectContent>
-                        {stores.map((style) =>
-                            <SelectItem value={style.value}>{style.label}</SelectItem>
+                        {stores.map((style, index) =>
+                            <SelectItem value={style.value} key={index}>{style.label}</SelectItem>
                         )}
                     </SelectContent>
                 </Select>
