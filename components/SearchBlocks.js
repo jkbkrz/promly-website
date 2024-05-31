@@ -82,8 +82,8 @@ export const SearchBlocks = ({ className, initialData = defaultInitialData, ...p
                         <SelectValue placeholder="Rozmiar" />
                     </SelectTrigger>
                     <SelectContent>
-                        {categoryData.sizes.map((size) =>
-                            <SelectItem value={size.value} key>{size.label}</SelectItem>
+                        {categoryData.sizes.map((size, index) =>
+                            <SelectItem value={size.value} key={index}>{size.label}</SelectItem>
                         )}
                     </SelectContent>
                 </Select>
