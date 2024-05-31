@@ -6,6 +6,7 @@ import ScrollCard from "./ScrollCard"
 import Lenis from '@studio-freight/lenis'
 import AllPromotionsButton from "./AllPromotionsButotn"
 import Link from "next/link"
+import Image from "next/image"
 
 const cards = [
     {
@@ -41,21 +42,30 @@ const cards = [
         imageSource: "/trophy-dynamic-color.png",
         content: (
             <>
-                <div className="flex flex-row gap-1 mb-1.5 justify-center" >
-                    <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
-                        target='_blank'
-                    >
-                        <img src="/gp_pl-cropped.svg" className="h-10 md:h-12" />
-                    </a>
-                    <a href='https://play.google.com/store/apps/details?id=pl.promly.promly'
-                        target='_blank'
-                    >
-                        <img src="/as_pl-cropped.svg" className="h-10  md:h-12 opacity-50" />
-                    </a>
-
-
+                <div className="flex flex-row flex-nowrap justify-center gap-x-1.5 items-center">
+                    <Link href="/app?referrer=website" target="_blank" rel="noopener noreferrer">
+                        <span className="sr-only">Download App</span>
+                        <Image
+                            src="/appstore.webp"
+                            alt="App Store Badge"
+                            height={0}
+                            width={100}
+                            style={{ height: '43px', width: "auto" }}
+                            priority
+                        />
+                    </Link>
+                    <Link href="/app?referrer=website" target="_blank" rel="noopener noreferrer">
+                        <span className="sr-only">Download App</span>
+                        <Image
+                            src="/googleplay.webp"
+                            alt="App Store Badge"
+                            height={0}
+                            width={100}
+                            style={{ height: '43px', width: "auto" }}
+                            priority
+                        />
+                    </Link>
                 </div>
-                <span className="text-xs text-neutral-500 block max-w-xl my-3">Aplikacja na App Store będzie dostępna w niedalekiej przyszłości. Promocje są dostępne również <Link href={"/promotions"} className="text-blue-500 font-bold underline">na tej stronie</Link></span>
             </>
         )
     }
@@ -66,17 +76,6 @@ export default function ScrollCards() {
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ['start start', 'end end']
-    })
-
-    useEffect(() => {
-        const lenis = new Lenis()
-
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
     })
 
     return (

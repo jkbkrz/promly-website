@@ -5,7 +5,7 @@ export default function Page() {
                 fontSize: "clamp(30px, 7vw, 60px)"
             }}>Polityka prywatności</h1>
 
-            <div className="mx-auto text-center text-neutral-500 max-w-5xl">
+            <div className="mx-auto text-justify text-neutral-500 max-w-5xl">
                 Promly takes your privacy seriously. To better protect your privacy we provide this privacy policy notice explaining the way your personal information is collected and used.
 
                 <br />

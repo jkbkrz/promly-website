@@ -3,6 +3,7 @@ import ProductSizes from "./ProductSizes";
 import ShareProduct from "./ShareProduct";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
+import { removeGenerationParameter } from "@/lib/utils";
 
 export default function ProductPage({ product }) {
     const discount = Math.round((Math.abs(product.price - product.discountedPrice) / product.price) * 100)
@@ -10,7 +11,7 @@ export default function ProductPage({ product }) {
         <div>
             <div className="rounded-xl mx-auto p-4 w-full  bg-neutral-100 border-0  border-neutral-800  h-96 max-h-96">
                 <img
-                    src={product.imageBase64}
+                    src={removeGenerationParameter(product.imageLinkFirebase)}
                     className="h-full mx-auto  object-contain object-center"
                 />
             </div>

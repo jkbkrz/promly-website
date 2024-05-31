@@ -27,19 +27,9 @@ export default function Page({ searchParams, params }) {
 
     return (
         <div className="flex flex-col items-center w-full my-20 gap-10 px-10">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="800"
-                height="800"
-                viewBox="0 0 512 512"
-                className="h-5 w-5"
-            >
-                <g className="fill-green-500" fillRule="evenodd" stroke="none" strokeWidth="1">
-                    <g transform="translate(85.333 42.667)">
-                        <path d="M170.667 0c70.49 0 128 57.695 128 128v85.333h42.666v213.334H0V213.333h42.667V128c0-70.305 57.51-128 128-128zm0 42.667c-47.331 0-85.334 38.996-85.334 85.333v85.333H256V128c0-46.337-38.003-85.333-85.333-85.333z"></path>
-                    </g>
-                </g>
-            </svg>
+            <div className="bg-green-200 rounded-full p-6 w-20 h-20 flex justify-center items-center">
+                <img src="/lock.png" className="w-14" />
+            </div>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="106.6"

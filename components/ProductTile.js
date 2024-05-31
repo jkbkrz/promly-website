@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import ShareProduct from "./ShareProduct"
 import ProductPage from "./ProductPage"
+import { removeGenerationParameter } from "@/lib/utils"
 
 const calculateTimeSinceUpdate = (date) => {
     const currentDate = new Date()
@@ -42,7 +43,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                     3
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
-    return <Card className="flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl" {...props}>
+    return <Card className="w-full flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl" {...props}>
         {product.selected === true && (
             <div className="px-4 py-3 flex flex-row gap-2 absolute">
                 <Image src="/selected.svg" width={16} height={16}></Image>
@@ -58,7 +59,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
 
         <div className="flex-grow p-4 w-full bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-96 lg:max-h-96">
             <img
-                src={product.imageBase64}
+                src={removeGenerationParameter(product.imageLinkFirebase)}
                 className="h-full w-full object-contain object-center"
             />
         </div>
