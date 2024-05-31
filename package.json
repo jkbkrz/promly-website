@@ -40,8 +40,10 @@
     "react-select": "^5.7.4",
     "styled-components": "^6.1.11",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss": "^0.0.0-insiders.f1f419a",
     "tailwindcss-animate": "^1.0.7",
     "typed.js": "^2.0.16"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
   }
 }
