@@ -43,10 +43,11 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                     3
 
     // h-96 max-h-96 sm:h-128 sm:max-h-128 
-    return <Card className="w-full flex flex-col relative overflow-hidden border border-black border-opacity-10 dark:border-zinc-800 rounded-2xl" {...props}>
+    return <Card className="w-full flex flex-col shadow-lg relative overflow-hidden border-none border-black border-opacity-10 dark:border-zinc-800 rounded-3xl shadow-black/5" {...props}>
         {product.selected === true && (
-            <div className="px-4 py-3 flex flex-row gap-2 absolute">
-                <Image src="/selected.svg" width={16} height={16}></Image>
+            <div className="mx-4 my-3 flex flex-row gap-2 absolute bg-red-200 px-2 py-0.5 rounded-full justify-start items-center">
+                <img src="/fire.png" className="h-4"></img>
+                <span className="text-black font-rubik text-xs">Popularne</span>
                 {/* <span className="text-xs text-black">Promly selected</span> */}
             </div>
         )}
@@ -57,10 +58,10 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
             {fromSearch && <span>modifiedSearchScore: {product.modifiedSearchScore.toFixed(5)}</span>}
         </div>} */}
 
-        <div className="flex-grow p-4 w-full bg-neutral-100 lg:aspect-none border-0  border-neutral-800 lg:h-96 lg:max-h-96">
+        <div className="flex-grow w-full bg-neutral-100 dark:bg-neutral-800 lg:aspect-none border-0 p-8  border-neutral-800  max-h-96 flex justify-center items-center">
             <img
                 src={removeGenerationParameter(product.imageLinkFirebase)}
-                className="h-full w-full object-contain object-center"
+                className="h-full w-full rounded-2xl object-cover object-center aspect-square"
             />
         </div>
         {/* href={product.link} target="_blank"  */}
@@ -72,7 +73,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                 <ProductPage product={product} />
             </SheetContent>
 
-            <div className="flex-shrink-0 p-4 flex justify-between flex-col border-t border-black border-opacity-10 dark:border-zinc-800">
+            <div className="flex-shrink-0 p-4 flex justify-between flex-col ">
                 <SheetTrigger>
 
                     <div className="text-start">
@@ -83,7 +84,7 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
                         </span>
                     </div>
 
-                    <h2 className="text-start text-base text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
+                    <h2 className="font-rubik text-start text-base font-medium text-black dark:text-white line-clamp-3 truncate text-ellipsis overflow-hidden">{product.name}</h2>
                 </SheetTrigger>
 
 
@@ -94,10 +95,14 @@ const ProductTile = ({ product, fromSearch, ...props }) => {
 
                 <div className="truncate text-neutral-500 flex flex-row justify-between text-center">
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#a8a29e"
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="#a8a29e"
                             stroke="#a8a29e" viewBox="240 240 544 544" width={14} height={14} className="inline-block mr-2">
                             <path d="M421.5 638.7l-36.2-36.2 217.2-217.2 36.2 36.2-217.2 217.2zm126.7-54.3L421.5 711.1 312.8 602.4l126.7-126.7-36.1-36.1-126.7 126.7-36.2 36.2 144.8 144.8 36.1 36.1.1.1 36.2-36.2-.1-.1 126.7-126.7-36.1-36.1zm235.3-162.9l-36.2-36.2-144.8-144.8-36.2 36.2-126.7 126.7 36.1 36.1 126.7-126.7 108.7 108.7-126.7 126.7 36.1 36.1 126.7-126.7.1.1 36.2-36.2z"></path>
-                        </svg>
+                        </svg> */}
+
+                        <div className="w-7 h-7 bg-blue-100 dark:bg-blue-950 p-0.5 rounded-full inline-flex justify-center items-center mr-1">
+                            <Image src="/link.png" height={15} width={15} />
+                        </div>
 
                         <span className="text-xs truncate text-neutral-500  mb-1">{new URL(product.link).hostname}</span>
                     </div>

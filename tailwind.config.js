@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
-
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   // darkMode: ["class"],
@@ -20,6 +20,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        rubik: ['var(--font-rubik)'],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

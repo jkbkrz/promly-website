@@ -26,9 +26,9 @@ export default async function Page({ params, searchParams }) {
             <SearchBlocks initialData={searchParams} />
             <div className="mt-12" />
 
-            <Card className="flex flex-row gap-4 w-full justify-start items-center max-w-5xl p-4 bg-purple-50 dark:bg-purple-500/15 shadow-purple-500/10 shadow-lg">
+            <Card className="flex flex-row gap-4 w-full justify-start items-center max-w-5xl p-4 bg-purple-50 dark:bg-purple-500/15 shadow-purple-500/10 shadow-lg font-rubik">
                 <Image src="/heart.png" width={64} height={64} className="self-center" />
-                <span className="text-sm"><b>Nasza aplikacja jest wciąż we wczesnej fazie rozwoju.</b> Możesz napotkać błędy i niedociągnięcia przy kategoryzacji produktów. Pracujemy nad poprawą funkcjonalności i stabilności. Dziękujemy za Twoją cierpliwość i wsparcie!</span>
+                <span className="text-sm"><span className="font-medium">Nasza aplikacja jest wciąż we wczesnej fazie rozwoju.</span> Możesz napotkać błędy i niedociągnięcia przy kategoryzacji produktów. Wciąż pracujemy nad poprawą funkcjonalności i stabilności.</span>
             </Card>
 
             <div className="mt-6" />
