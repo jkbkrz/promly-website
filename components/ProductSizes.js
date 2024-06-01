@@ -48,7 +48,7 @@ const ProductSizes = ({ sizes, ...props }) => {
             <span className="text-xs text-neutral-500">Aktualność popularnych rozmiarów:</span>
             <ul className="flex flex-row flex-wrap gap-1">
                 {mostRecentSizes.map((item, index) => (
-                    <Badge key={index}>{item.size.toUpperCase()}/{formatDateToTimeAgo(item.lastUpdatedAt)}</Badge>
+                    <Badge key={index} variant="outline">{item.size.toUpperCase()}/{formatDateToTimeAgo(item.lastUpdatedAt)}</Badge>
                     // <li
                     //     key={index}
                     //     className={`relative inline-block rounded-md  px-1.5 font-mono text-black dark:text-white border dark:border-neutral-700 border-black border-opacity-10 ${getColorCode(item.lastUpdatedAt) === 'green'

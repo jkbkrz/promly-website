@@ -36,9 +36,20 @@ export default async function Page({ params, searchParams }) {
 
             {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
 
-            <div className="w-full mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 max-w-5xl">
-                {products}
-            </div>
+
+            {products.length != 0 ? (
+                <div className="w-full mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 max-w-5xl">
+                    {products}
+                </div>
+
+            ) : (
+                <div className="w-full flex flex-col justify-center items-center mt-32 mb-40">
+                    <Image src="/empty.png" width={200} height={200} />
+                    <h2 className="font-rubik text-center text-base text-neutral-500">Brak wyników. Spróbuj użyć mniej filtrów lub zmień wyszukiwaną frazę</h2>
+                </div>
+            )}
+
+
 
 
         </main>

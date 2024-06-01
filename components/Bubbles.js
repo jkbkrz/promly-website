@@ -26,7 +26,7 @@ export const ProductBubbles = () => {
                         onTransitionEnd={{ delay: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: bubble.delay, type: "spring" }}
-                        className={cn("absolute overflow-hidden rounded-full shadow-xl border-2", bubble.color)}
+                        className={cn("absolute overflow-hidden rounded-full border-2 dark:border-neutral-800")}
                         style={{ top: bubble.top, left: bubble.left, right: bubble.right }}
                     >
                         {bubble.src && (
